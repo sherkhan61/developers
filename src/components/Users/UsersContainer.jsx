@@ -1,5 +1,4 @@
 import React from 'react';
-import connect from 'react-redux/lib/connect/connect';
 import {
     follow,
     unfollow,
@@ -10,6 +9,7 @@ import Users from './Users';
 import Preloader from "../common/Preloader/Preloader";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {connect} from "react-redux";
 
 
 class UsersContainer extends React.Component {
