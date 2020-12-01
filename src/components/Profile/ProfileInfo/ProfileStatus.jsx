@@ -35,9 +35,9 @@ class ProfileStatus extends React.Component {
         return (
             <>
                 <div>
-                    {/*<div>
+                    <div>
                         <img src={samurai}/>
-                    </div>*/}
+                    </div>
                     {!this.state.editMode &&
                         <div>
                             <span onDoubleClick={this.activateEditMode}>{this.props.status}</span>
