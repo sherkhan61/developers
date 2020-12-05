@@ -24,9 +24,6 @@ const ProfileStatusWithHooks = (props) => {
 
     return (
         <div>
-            <div>
-                <img src={samurai}/>
-            </div>
             {!editMode &&
             <div>
                 <span onDoubleClick={activateEditMode}>{props.status || "-----------"}</span>
