@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import samurai from "../../../assets/images/samurai.png"
 
 
 const ProfileStatusWithHooks = (props) => {

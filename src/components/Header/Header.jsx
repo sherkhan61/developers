@@ -1,18 +1,19 @@
 import React from "react";
 import s from "./Header.module.css";
 import {NavLink} from "react-router-dom";
+import samurai from "../../assets/images/logo-samurai.png";
 
 const Header = (props) => {
   return (
     <header className={s.header}>
       <img
         className="logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png"
+        src={samurai}
         alt="logo"
       />
       <div className={s.loginBlock}>
           { props.isAuth
-              ? <div>{props.login} - <button onClick={props.logout}>Log out</button> </div>
+              ? <div>{props.login} <button onClick={props.logout}>Log out</button> </div>
                 : <NavLink to={'/login'}>Login</NavLink> }
       </div>
     </header>

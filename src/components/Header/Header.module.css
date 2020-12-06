@@ -1,8 +1,10 @@
 .header {
   grid-area: h;
   background-color: green;
+  height: 80px;
 }
 .header img {
+  padding-left: 20px;
   width: 50px;
 }
 .loginBlock {
