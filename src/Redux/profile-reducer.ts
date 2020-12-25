@@ -1,6 +1,9 @@
 import {profileAPI} from "../API/api";
 import {stopSubmit} from "redux-form";
 import {PhotosType, PostType, ProfileType} from "../types/types";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "./redux-store";
+import {Dispatch} from "redux";
 
 const ADD_POST = 'ADD-POST';
 const DELETE_POST = 'DELETE_POST';
@@ -20,6 +23,8 @@ let initialState = {
     newPostText: ""
 }
 export type InitialStateType = typeof initialState
+
+
 const profileReducer = (state = initialState, action: any): InitialStateType => {
     switch (action.type) {
         case ADD_POST: {
@@ -60,6 +65,11 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
     }
     return state;
 }
+
+// type ProfileActionsTypes = AddPostActionCreateActionType | SetUsersProfileActionType |
+//    SetStatusActionType | DeletePostActionType | SavePhotoSuccessActionType
+
+
 type AddPostActionCreateActionType = {
     type: typeof ADD_POST
     newPostText: string
@@ -90,9 +100,12 @@ type SavePhotoSuccessActionType = {
 }
 export const savePhotoSuccess = (photos: PhotosType): SavePhotoSuccessActionType => ({type: SAVE_PHOTO_SUCCESS, photos})
 
+
+/*type ProfileDispatch = Dispatch<ProfileActionsTypes>
+type ProfileThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ProfileActionsTypes>*/
+
 export const getProfile = (userId: number) => async (dispatch: any) => {
     let response = await profileAPI.getProfile(userId);
-
     dispatch(setUsersProfile(response.data))
 }
 
