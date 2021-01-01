@@ -1,9 +1,9 @@
-import {profileAPI} from "../API/api";
 import {stopSubmit} from "redux-form";
 import {PhotosType, PostType, ProfileType} from "../types/types";
 import {ThunkAction} from "redux-thunk";
 import {AppStateType} from "./redux-store";
 import {Dispatch} from "redux";
+import {profileAPI} from "../API/profile-api";
 
 const ADD_POST = 'ADD-POST';
 const DELETE_POST = 'DELETE_POST';
