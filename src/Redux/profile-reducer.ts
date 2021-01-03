@@ -9,14 +9,13 @@ import {BaseThunkType, InferActionsTypes} from "./redux-store";
 
 let initialState = {
     postsData: [
-        {id: 1, message: 'Hi, how are you?', likeCount: 11},
-        {id: 2, message: 'Hi, bro', likeCount: 12},
-        {id: 3, message: 'Bla bla bla', likeCount: 12},
-        {id: 4, message: 'Yo Yo Yo Yo Yo', likeCount: 12},
+        {id: 1, message: 'Hi, how are you?', likesCount: 11},
+        {id: 2, message: 'Hi, bro', likesCount: 12},
+        {id: 3, message: 'Bla bla bla', likesCount: 12},
+        {id: 4, message: 'Yo Yo Yo Yo Yo', likesCount: 12},
     ] as Array<PostType>,
     profile: null as ProfileType | null,
-    status: "",
-    newPostText: ""
+    status: ""
 }
 
 
@@ -27,12 +26,11 @@ const profileReducer = (state = initialState, action: ActionsTypes): InitialStat
             let newPost = {
                 id: 5,
                 message: action.newPostText,
-                likeCount: 0
+                likesCount: 0
             }
             return {
                 ...state,
-                postsData: [...state.postsData, newPost],
-                newPostText: ''
+                postsData: [...state.postsData, newPost]
             }
         }
         case 'SN/PROFILE/DELETE_POST':

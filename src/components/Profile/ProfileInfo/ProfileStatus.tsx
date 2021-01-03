@@ -1,14 +1,10 @@
 import React, {ChangeEvent} from "react";
 import samurai from "../../../assets/images/samurai.png"
 
-type PropsType = {
-    status: string
-    updateStatus: (newStatus: string) => void
-}
-type StateType = {
-    editMode: boolean,
-    status: string
-}
+
+
+
+
 class ProfileStatus extends React.Component<PropsType, StateType> {
     state = {
         editMode: false,
@@ -64,3 +60,16 @@ class ProfileStatus extends React.Component<PropsType, StateType> {
 ;
 
 export default ProfileStatus;
+
+
+
+// types start
+type PropsType = {
+    status: string
+    updateStatus: (newStatus: string) => void
+}
+type StateType = {
+    editMode: boolean,
+    status: string
+}
+// types end

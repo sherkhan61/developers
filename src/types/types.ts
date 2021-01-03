@@ -3,7 +3,7 @@
 export type PostType = {
     id: number
     message: string
-    likeCount: number
+    likesCount: number
 }
 export type ProfileType = {
     userId: number
@@ -12,6 +12,7 @@ export type ProfileType = {
     fullName: string
     contacts: ContactsType
     photos: PhotosType
+    aboutMe: string
 }
 export type ContactsType = {
     github: string
@@ -31,6 +32,6 @@ export type UserType = {
     id: number
     name: string
     status: string
-    photos: ProfileType
+    photos: PhotosType
     followed: boolean
 }
