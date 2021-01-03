@@ -14,6 +14,8 @@ let initialState: InitialStateType = {
     captchaUrl: null,  // if null, then captcha is not required
 }
 
+
+// reducers start
 const authReducer = (state = initialState, action: ActionsTypes): InitialStateType => {
     switch (action.type) {
         case 'SN/auth/SET_USER_DATA':
@@ -27,8 +29,11 @@ const authReducer = (state = initialState, action: ActionsTypes): InitialStateTy
     }
 
 }
+// reducers end
 
 
+
+// actions start
 export const actions = {
     setAuthUserData: (userId: number | null, email: string | null, login: string | null, isAuth: boolean) => ({
         type: 'SN/auth/SET_USER_DATA',
@@ -39,8 +44,11 @@ export const actions = {
         payload: {captchaUrl}
     } as const)
 }
+// actions end
 
 
+
+// thunks start
 export const getAuth = (): ThunkType => async (dispatch) => {
     let data = await authAPI.me();
 
@@ -77,10 +85,14 @@ export const logout = (): ThunkType => async (dispatch) => {
         dispatch(actions.setAuthUserData(null, null, null, false));
     }
 }
+// thunks end
+
+
 
 export default authReducer;
 
 
+//types
 export type InitialStateType = {
     userId: number | null
     email: string | null
