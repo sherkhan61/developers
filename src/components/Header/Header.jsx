@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Header.module.css";
 import {NavLink} from "react-router-dom";
-import samurai from "../../assets/images/logo-samurai.png";
+import samurai from "../../assets/images/samurai.png";
 
 const Header = (props) => {
   return (

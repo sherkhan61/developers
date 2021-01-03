@@ -9,11 +9,39 @@ import s from "../common/FormsControls/FormsControls.module.css"
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={s.formContainer}>
+            <h2>Login</h2>
 
-            {createField("email", "email", [required], Input)}
+            {createField ("email", "email", [required], Input)}
             {createField("password", "password", [required], Input, {type: "password"})}
             {createField(null, "rememberMe", null, Input, {type: "checkbox"}, "remember me")}
+            {/*<div className={s.formField}>
+                <label form="email">Email</label>
+                <Field placeholder="email"
+                       name="email"
+                       component="input"
+                       validate={required}
+                />
+            </div>
+            <div className={s.formField}>
+                <label form="password">Password</label>
+                <Field placeholder="password"
+                       name="password"
+                       component="input"
+                       validate={required}
+                       type="password"
+                />
+            </div>
+            <div className={s.formField}>
+                <label form="rememberMe">Remember me</label>
+                <Field name="rememberMe"
+                       component="input"
+                       type="checkbox"
+                       text="remember me"
+                />
+            </div>*/}
+
+
 
             {captchaUrl && <img src={captchaUrl} />}
             {captchaUrl && createField("symbols from image", "captcha", [required], Input )}
@@ -22,7 +50,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
                 {error}
             </div>
             }
-            <div>
+            <div className={s.formField}>
                 <button>Login</button>
             </div>
         </form>
@@ -43,7 +71,6 @@ const Login = (props) => {
 
     return (
         <div>
-            <h1>LOGIN</h1>
             <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
         </div>
     )
