@@ -23,7 +23,7 @@ export default Profile;
 
 
 
-// types
+// types start
 type PropsType = {
     isOwner: boolean
     profile: ProfileType | null
@@ -32,3 +32,4 @@ type PropsType = {
     savePhoto: (file: File) => void
     saveProfile: (profile: ProfileType) => Promise<any>
 }
+// types end
