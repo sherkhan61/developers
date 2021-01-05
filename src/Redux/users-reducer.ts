@@ -83,7 +83,7 @@ export const actions = {
 
 
 // thunks start
-export const getUsers = (page: number, pageSize: number): ThunkType => async (dispatch) => {
+export const getUsers = (page: number, pageSize: number, term: string): ThunkType => async (dispatch) => {
     dispatch(actions.toggleIsFetching(true))
     dispatch(actions.setCurrentPage(page))
     let data = await usersAPI.getUsers(page, pageSize)
