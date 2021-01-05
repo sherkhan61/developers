@@ -2,6 +2,7 @@ import React from 'react'
 import Paginator from '../common/Paginator/Paginator'
 import User from './User'
 import {UserType} from '../../types/types'
+import {UsersSearchForm} from './UsersSearchForm'
 
 
 const Users: React.FC<PropsType> = ({
@@ -13,6 +14,7 @@ const Users: React.FC<PropsType> = ({
                                     }) => {
     return (
         <div>
+            <UsersSearchForm/>
             <Paginator totalItemsCount={totalUsersCount} pageSize={pageSize}
                        currentPage={currentPage} onPageChanged={onPageChanged}/>
             <div>
@@ -29,6 +31,7 @@ const Users: React.FC<PropsType> = ({
         </div>
     )
 }
+
 export default Users
 
 

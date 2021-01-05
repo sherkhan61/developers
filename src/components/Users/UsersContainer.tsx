@@ -24,11 +24,11 @@ import {AppStateType} from '../../Redux/redux-store'
 class UsersContainer extends React.Component<PropsType> {
 
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize)
+        this.props.getUsers(this.props.currentPage, this.props.pageSize, '')
     }
 
     onPageChanged = (pageNumber: number) => {
-        this.props.getUsers(pageNumber, this.props.pageSize)
+        this.props.getUsers(pageNumber, this.props.pageSize, '')
     }
 
     render() {
@@ -89,7 +89,7 @@ type MapStatePropsType = {
     followingInProgress: Array<number>
 }
 type MapDispatchPropsType = {
-    getUsers: (currentPage: number, pageSize: number) => void
+    getUsers: (currentPage: number, pageSize: number, term: string) => void
     unfollow: (userId: number) => void
     follow: (userId: number) => void
 }
