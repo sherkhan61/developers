@@ -95,15 +95,17 @@ export const actions = {
 
 
 // thunks start
-export const getUsers = (page: number, pageSize: number, filter: FilterType): ThunkType => async (dispatch) => {
-    dispatch(actions.toggleIsFetching(true))
-    dispatch(actions.setCurrentPage(page))
-    dispatch(actions.setFilter(filter))
-    let data = await usersAPI.getUsers(page, pageSize, filter.term, filter.friend)
+export const getUsers = (page: number, pageSize: number, filter: FilterType): ThunkType => {
+    return async (dispatch) => {
+        dispatch(actions.toggleIsFetching(true))
+        dispatch(actions.setCurrentPage(page))
+        dispatch(actions.setFilter(filter))
 
-    dispatch(actions.toggleIsFetching(false))
-    dispatch(actions.setUsers(data.items))
-    dispatch(actions.setTotalUsersCount(data.totalCount))
+        let data = await usersAPI.getUsers(page, pageSize, filter.term, filter.friend)
+        dispatch(actions.toggleIsFetching(false))
+        dispatch(actions.setUsers(data.items))
+        dispatch(actions.setTotalUsersCount(data.totalCount))
+    }
 }
 
 const followUnfollowFlow = async (dispatch: Dispatch<ActionsTypes>,
@@ -112,6 +114,7 @@ const followUnfollowFlow = async (dispatch: Dispatch<ActionsTypes>,
                                          actionCreator: (userId: number) => ActionsTypes) => {
     dispatch(actions.toggleIsFollowingProgress(true, userId))
     let response = await apiMethod(userId)
+
     if (response.resultCode == 0) {
         dispatch(actionCreator(userId))
     }
