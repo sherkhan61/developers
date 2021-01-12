@@ -8,9 +8,9 @@ import Music from './components/Music/Music'
 import loadable from '@loadable/component'
 //import ProfileContainer from "./components/Profile/ProfileContainer";
 //import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from './components/Users/UsersContainer'
+import {UsersPage} from './components/Users/UsersContainer'
 import HeaderContainer from './components/Header/HeaderContainer'
-import LoginPage from './components/Login/Login'
+import {LoginPage} from './components/Login/LoginPage'
 import {connect, Provider} from 'react-redux'
 import {compose} from 'redux'
 import {initializeApp} from './Redux/app-reducer'
@@ -42,8 +42,8 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
                 <div className='app-wrapper-content'>
                     <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
                     <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
-                    <Route path={'/users'} render={() => <UsersContainer pageTitle={'Samurai'}/>}/>
-                    <Route path={'/login'} render={() => <LoginPage/>}/>
+                    <Route path={'/users'} render={() => <UsersPage pageTitle={'Samurai'}/>}/>
+                    <Route path={'/login'} render={() => <LoginPage />}/>
                     <Route path={'/news'} render={() => <News/>}/>
                     <Route path={'/music'} render={() => <Music/>}/>
                     <Route path={'/settings'} render={() => <Settings/>}/>
