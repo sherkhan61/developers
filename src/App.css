@@ -1,16 +1,20 @@
-.app-wrapper {
-    display: grid;
-    grid-template-areas: "h h" "n c";
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
+
+
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
 }
 
-.app-wrapper-content {
-    grid-area: c;
-    background-color: cyan;
+.site-layout-sub-header-background {
+  background: #fff;
 }
 
+.site-layout-background {
+  background: #fff;
+}
 
-
-
+.logo {
+  width: 80px;
+}
 

@@ -18,6 +18,7 @@
     "@types/react-router-dom": "^5.1.6",
     "@types/react-test-renderer": "^17.0.0",
     "@types/redux-form": "^8.3.1",
+    "antd": "^4.10.2",
     "axios": "^0.21.0",
     "classnames": "^2.2.6",
     "final-form": "^4.20.1",

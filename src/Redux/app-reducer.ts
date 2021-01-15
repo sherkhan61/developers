@@ -30,13 +30,10 @@ export const actions = {
 
 
 // thunks start
-export const initializeApp = () => (dispatch: any) => {
-    let promise = dispatch(getAuth())
+export const initializeApp = () => async (dispatch: any) => {
+    let promise = await dispatch(getAuth())
+    dispatch(actions.initializedSuccess())
 
-    Promise.all([promise])
-        .then(() => {
-            dispatch(actions.initializedSuccess())
-        })
 }
 // thunks end
 

@@ -22,14 +22,14 @@ beforeEach(() => {
     }
 })
 
-test('follow success', () => {
+test('followThunk success', () => {
 
     const newState = usersReducer(state, actions.followSuccess(1))
 
     expect(newState.users[0].followed).toBeFalsy()
     expect(newState.users[1].followed).toBeTruthy()
 })
-test('unfollow success', () => {
+test('unfollowThunk success', () => {
 
     const newState = usersReducer(state, actions.unfollowSuccess(3))
 

@@ -1,59 +1,92 @@
 import React from 'react'
 import './App.css'
-import Navbar from './components/Navbar/Navbar'
-import {HashRouter, Route, withRouter} from 'react-router-dom'
-import News from './components/News/News'
-import Settings from './components/Settings/Settings'
-import Music from './components/Music/Music'
+import 'antd/dist/antd.css'
+import {Layout, Menu} from 'antd'
+import {ContainerOutlined, UserOutlined, MessageOutlined, ProfileOutlined} from '@ant-design/icons'
+import logo from './assets/images/logo.svg'
 import loadable from '@loadable/component'
-//import ProfileContainer from "./components/Profile/ProfileContainer";
-//import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import {UsersPage} from './components/Users/UsersContainer'
-import HeaderContainer from './components/Header/HeaderContainer'
-import {LoginPage} from './components/Login/LoginPage'
-import {connect, Provider} from 'react-redux'
-import {compose} from 'redux'
-import {initializeApp} from './Redux/app-reducer'
 import Preloader from './components/common/Preloader/Preloader'
+import {compose} from 'redux'
+import {connect, Provider} from 'react-redux'
+import {HashRouter, NavLink, Route, withRouter} from 'react-router-dom'
+import {initializeApp} from './Redux/app-reducer'
 import store, {AppStateType} from './Redux/redux-store'
+import HeaderContainer from './components/Header/HeaderContainer'
+import { UsersPage } from './components/Users/UsersContainer'
+import {LoginPage} from './components/Login/LoginPage'
+import News from './components/News/News'
+
+
+const { Header, Content, Footer, Sider } = Layout;
 
 
 
-
-const DialogsContainer = loadable(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = loadable(() => import('./components/Profile/ProfileContainer'))
+const DialogsContainer = loadable(() => import('./components/Dialogs/DialogsContainer'))
+
 
 class App extends React.Component<MapPropsType & DispatchPropsType> {
-
     componentDidMount() {
         this.props.initializeApp()
     }
 
-    render() {
-        if (!this.props.initialized) {
-            return <Preloader/>
-        }
 
-
-        return (
-            <div className='app-wrapper'>
+  render() {
+            if (!this.props.initialized) {
+                return <Preloader/>
+            }
+    return (
+        <Layout>
+          <Sider
+              breakpoint="lg"
+              collapsedWidth="0"
+              onBreakpoint={broken => {
+                console.log(broken);
+              }}
+              onCollapse={(collapsed, type) => {
+                console.log(collapsed, type);
+              }}
+          >
+              <div className="logo">
+                  <img src={logo} />
+              </div>
+            <Menu theme='dark' mode="inline" defaultSelectedKeys={['4']} >
+              <Menu.Item key="1" icon={<ProfileOutlined />}>
+                  <NavLink to={'/profile'}>Profile</NavLink>
+              </Menu.Item>
+              <Menu.Item key="2" icon={<MessageOutlined />}>
+                  <NavLink to={'/dialogs'}>Messages</NavLink>
+              </Menu.Item>
+              <Menu.Item key="3" icon={<UserOutlined />}>
+                  <NavLink to={'/users'}>Users</NavLink>
+              </Menu.Item>
+              <Menu.Item key="4" icon={<ContainerOutlined />}>
+                  <NavLink to={'/news'}>News</NavLink>
+              </Menu.Item>
+            </Menu>
+          </Sider>
+          <Layout>
+            <Header className="site-layout-sub-header-background" style={{ padding: 0, background: '#3f5c80' }}>
                 <HeaderContainer/>
-                <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
-                    <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
-                    <Route path={'/users'} render={() => <UsersPage pageTitle={'Samurai'}/>}/>
-                    <Route path={'/login'} render={() => <LoginPage />}/>
-                    <Route path={'/news'} render={() => <News/>}/>
-                    <Route path={'/music'} render={() => <Music/>}/>
-                    <Route path={'/settings'} render={() => <Settings/>}/>
-                </div>
-            </div>
-        )
+            </Header>
+            <Content style={{ margin: '24px 16px 0' }}>
+              <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                  <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
+                  <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
+                  <Route path={'/users'} render={() => <UsersPage pageTitle={'Developers'}/>}/>
+                  <Route path={'/login'} render={() => <LoginPage />}/>
+                  <Route path={'/news'} render={() => <News/>}/>
+              </div>
+            </Content>
+            <Footer style={{ textAlign: 'center', background: '#3f5c80' }}>©2021 Created by Sherkhan Tulkibay
 
-
-    }
+            </Footer>
+          </Layout>
+        </Layout>
+    )
+  }
 }
+
 
 const mapStateToProps = (state: AppStateType) => ({
     initialized: state.app.initialized

@@ -121,13 +121,13 @@ const followUnfollowFlow = async (dispatch: Dispatch<ActionsTypes>,
     dispatch(actions.toggleIsFollowingProgress(false, userId))
 }
 
-export const follow = (userId: number): ThunkType => {
+export const followThunk = (userId: number): ThunkType => {
     return async (dispatch) => {
         await followUnfollowFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), actions.followSuccess)
     }
 }
 
-export const unfollow = (userId: number): ThunkType => {
+export const unfollowThunk = (userId: number): ThunkType => {
     return async (dispatch) => {
         await followUnfollowFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), actions.unfollowSuccess)
     }

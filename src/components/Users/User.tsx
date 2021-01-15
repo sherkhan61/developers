@@ -1,11 +1,28 @@
-import React from 'react'
+import React, {useReducer} from 'react'
 import s from './Users.module.css'
 import userPhoto from '../../assets/images/user.png'
 import {NavLink} from 'react-router-dom'
 import {UserType} from '../../types/types'
+import {useDispatch, useSelector} from 'react-redux'
+import {getFollowingInProgress, getUsersPage} from '../../Redux/users-selectors'
+import usersReducer, {followThunk, unfollowThunk} from '../../Redux/users-reducer'
+import {AppStateType} from '../../Redux/redux-store'
 
 
-let User: React.FC<PropsType> = ({user, followingInProgress, unfollow, follow}) => {
+const User: React.FC<PropsType> = ({user}) => {
+
+    //const user = useReducer(usersReducer)
+    const followingInProgress = useSelector(getFollowingInProgress)
+
+
+    const dispatch = useDispatch()
+    const follow = (userId: number) => {
+        dispatch(followThunk(userId))
+    }
+    const unfollow = (userId: number) => {
+        dispatch(unfollowThunk(userId))
+    }
+
     return (
         <div>
             <span>
@@ -49,7 +66,4 @@ export default User
 // types
 type PropsType = {
     user: UserType
-    followingInProgress: Array<number>
-    unfollow: (userId: number) => void
-    follow: (userId: number) => void
 }

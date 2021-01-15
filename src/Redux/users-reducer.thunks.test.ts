@@ -1,4 +1,4 @@
-import {actions, follow, unfollow} from './users-reducer'
+import {actions, followThunk, unfollowThunk} from './users-reducer'
 import {usersAPI} from '../API/users-api'
 import {APIResponseType, ResultCodesEnum} from '../API/api'
 
@@ -28,8 +28,8 @@ userAPIMock.unfollow.mockReturnValue(Promise.resolve(result))
 
 
 
-test('success follow thunk', async () => {
-    const thunk = follow(1)
+test('success followThunk thunk', async () => {
+    const thunk = followThunk(1)
 
 
 
@@ -41,8 +41,8 @@ test('success follow thunk', async () => {
     expect(dispatchMock).toHaveBeenNthCalledWith(3, actions.toggleIsFollowingProgress(false, 1))
 })
 
-test('success unfollow thunk', async () => {
-    const thunk = unfollow(1)
+test('success unfollowThunk thunk', async () => {
+    const thunk = unfollowThunk(1)
     const dispatchMock = jest.fn()
     const getStateMock = jest.fn()
 
