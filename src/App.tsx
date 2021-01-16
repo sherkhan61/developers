@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import 'antd/dist/antd.css'
 import {Layout, Menu} from 'antd'
-import {ContainerOutlined, UserOutlined, MessageOutlined, ProfileOutlined} from '@ant-design/icons'
+import {ContainerOutlined, MessageOutlined, ProfileOutlined, UserOutlined} from '@ant-design/icons'
 import logo from './assets/images/logo.svg'
 import loadable from '@loadable/component'
 import Preloader from './components/common/Preloader/Preloader'
@@ -11,10 +11,10 @@ import {connect, Provider} from 'react-redux'
 import {HashRouter, NavLink, Route, withRouter} from 'react-router-dom'
 import {initializeApp} from './Redux/app-reducer'
 import store, {AppStateType} from './Redux/redux-store'
-import HeaderContainer from './components/Header/HeaderContainer'
-import { UsersPage } from './components/Users/UsersContainer'
+import {UsersPage} from './components/Users/UsersContainer'
 import {LoginPage} from './components/Login/LoginPage'
 import News from './components/News/News'
+import {TopHeader} from './components/Header/Header'
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -67,7 +67,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
           </Sider>
           <Layout>
             <Header className="site-layout-sub-header-background" style={{ padding: 0, background: '#3f5c80' }}>
-                <HeaderContainer/>
+                <TopHeader/>
             </Header>
             <Content style={{ margin: '24px 16px 0' }}>
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
@@ -96,7 +96,7 @@ const AppContainer = compose<React.ComponentType>(
     withRouter,
     connect(mapStateToProps, {initializeApp}))(App)
 
-const SamuraiJSApp: React.FC = () => {
+const DevelopersApp: React.FC = () => {
     return (
         <HashRouter>
             <Provider store={store}>
@@ -106,7 +106,7 @@ const SamuraiJSApp: React.FC = () => {
     )
 }
 
-export default SamuraiJSApp
+export default DevelopersApp
 
 
 

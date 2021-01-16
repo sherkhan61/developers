@@ -1,34 +1,40 @@
 import React from 'react'
-import s from './Header.module.css'
-import {NavLink} from 'react-router-dom'
+import 'antd/dist/antd.css'
+import {Avatar, Button, Col, Row} from 'antd'
+import {useDispatch, useSelector} from 'react-redux'
+import {selectIsAuth} from '../../Redux/auth-selectors'
+import {logout} from '../../Redux/auth-reducer'
 
 
-const Header: React.FC<MapStatePropsType & DispatchPropsType> = (props) => {
+export const TopHeader: React.FC = () => {
+    const isAuth = useSelector(selectIsAuth)
+
+    const dispatch = useDispatch()
+
+    const logoutCallback = () => {
+        dispatch(logout())
+    }
+
     return (
-        <header className={s.header}>
-            <div className={s.loginBlock}>
-                {props.isAuth
-                    ? <div>{props.login}
-                        <button onClick={props.logout}>Log out</button>
+        <Row>
+            <Col xs={{ span: 8, offset: 0, flex: 'center' }}>
+
+            </Col>
+            <Col xs={{ span: 8, offset: 0 }}>
+                Developers
+            </Col>
+            <Col xs={{ span: 8, offset: 0 }}>
+                {isAuth
+                    ? <div>
+                        <Avatar size={'small'} style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>S</Avatar>
+                        <Button size={'small'} onClick={logoutCallback}>Log out</Button>
                     </div>
-                    : <NavLink to={'/login'}>Login</NavLink>}
-            </div>
-        </header>
+                    : <Button size={'small'} href={'/login'}>Login</Button>
+                }
+            </Col>
+        </Row>
     )
 }
-
-export default Header
-
-
-// types start
-export type MapStatePropsType = {
-    isAuth: boolean
-    login: string | null
-}
-export type DispatchPropsType = {
-    logout: () => void
-}
-// types end
 
 
 

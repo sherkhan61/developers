@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sherkhan61.github.io/samurai",
+  "homepage": "https://sherkhan61.github.io/developers",
   "dependencies": {
     "@loadable/component": "^5.14.1",
     "@testing-library/jest-dom": "^4.2.4",
