@@ -7,7 +7,7 @@ const DialogItem: React.FC<PropsType> = (props) => {
     return (
         <div className={s.dialog + ' ' + s.active}>
             <NavLink to={path}><img
-                src="https://www.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png"></img> {props.name}
+                src="https://image.flaticon.com/icons/png/512/149/149071.png"></img> {props.name}
             </NavLink>
         </div>
     )
