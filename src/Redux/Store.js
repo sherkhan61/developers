@@ -1,5 +1,5 @@
 import profileReducer from "./profile-reducer";
-import dialogsReducer from "./dialogs-reducer";
+import dialogsReducer from "./reducers/dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
 

@@ -2,7 +2,6 @@ import React, {useEffect} from 'react'
 import Paginator from '../common/Paginator/Paginator'
 import User from './User'
 import {UsersSearchForm} from './UsersSearchForm'
-import {FilterType, getUsers} from '../../Redux/users-reducer'
 import {useDispatch, useSelector} from 'react-redux'
 import {
     getCurrentPage,
@@ -13,6 +12,8 @@ import {
 } from '../../Redux/users-selectors'
 import {useHistory} from 'react-router-dom'
 import * as queryString from 'querystring'
+import {getUsers} from '../../Redux/thunks/users-thunk'
+import {FilterType} from '../../types/users-type'
 
 
 type QueryParamsType = {term?: string, page?: string, friend?: string}

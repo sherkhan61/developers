@@ -9,12 +9,12 @@ import Preloader from './components/common/Preloader/Preloader'
 import {compose} from 'redux'
 import {connect, Provider} from 'react-redux'
 import {HashRouter, NavLink, Route, withRouter} from 'react-router-dom'
-import {initializeApp} from './Redux/app-reducer'
 import store, {AppStateType} from './Redux/redux-store'
 import {UsersPage} from './components/Users/UsersContainer'
 import {LoginPage} from './components/Login/LoginPage'
 import News from './components/News/News'
 import {TopHeader} from './components/Header/Header'
+import {initializeApp} from './Redux/thunks/app-thunk'
 
 
 const { Header, Content, Footer, Sider } = Layout;

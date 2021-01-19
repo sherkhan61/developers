@@ -1,10 +1,10 @@
 import React from 'react'
-import {actions} from '../../Redux/dialogs-reducer'
 import Dialogs from './Dialogs'
 import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 import {compose} from 'redux'
 import {connect} from 'react-redux'
 import {AppStateType} from '../../Redux/redux-store'
+import {actions} from '../../Redux/actions/dialogs-action'
 
 
 let mapStateToProps = (state: AppStateType) => {

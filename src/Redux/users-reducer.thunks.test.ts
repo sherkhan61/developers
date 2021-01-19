@@ -1,4 +1,4 @@
-import {actions, followThunk, unfollowThunk} from './users-reducer'
+import {actions, followThunk, unfollowThunk} from './reducers/users-reducer'
 import {usersAPI} from '../API/users-api'
 import {APIResponseType, ResultCodesEnum} from '../API/api'
 

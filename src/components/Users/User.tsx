@@ -1,17 +1,15 @@
-import React, {useReducer} from 'react'
+import React from 'react'
 import s from './Users.module.css'
 import userPhoto from '../../assets/images/user.png'
 import {NavLink} from 'react-router-dom'
 import {UserType} from '../../types/types'
 import {useDispatch, useSelector} from 'react-redux'
-import {getFollowingInProgress, getUsersPage} from '../../Redux/users-selectors'
-import usersReducer, {followThunk, unfollowThunk} from '../../Redux/users-reducer'
-import {AppStateType} from '../../Redux/redux-store'
+import {getFollowingInProgress} from '../../Redux/users-selectors'
+import {followThunk, unfollowThunk} from '../../Redux/thunks/users-thunk'
 
 
 const User: React.FC<PropsType> = ({user}) => {
 
-    //const user = useReducer(usersReducer)
     const followingInProgress = useSelector(getFollowingInProgress)
 
 

@@ -2,8 +2,8 @@ import React from 'react'
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
-import {InitialStateType} from '../../Redux/dialogs-reducer'
 import {AddMessageFormRedux, NewMessageFormValuesType} from './AddMessageForm/AddMessageForm'
+import {InitialStateType} from '../../types/dialogs-type'
 
 
 const Dialogs: React.FC<PropsType> = (props) => {
