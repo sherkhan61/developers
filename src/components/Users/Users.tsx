@@ -9,7 +9,7 @@ import {
     getTotalUsersCount,
     getUsersFilter,
     getUsersPage,
-} from '../../Redux/users-selectors'
+} from '../../Redux/selectors/users-selectors'
 import {useHistory} from 'react-router-dom'
 import * as queryString from 'querystring'
 import {getUsers} from '../../Redux/thunks/users-thunk'

@@ -4,7 +4,7 @@ import userPhoto from '../../assets/images/user.png'
 import {NavLink} from 'react-router-dom'
 import {UserType} from '../../types/types'
 import {useDispatch, useSelector} from 'react-redux'
-import {getFollowingInProgress} from '../../Redux/users-selectors'
+import {getFollowingInProgress} from '../../Redux/selectors/users-selectors'
 import {followThunk, unfollowThunk} from '../../Redux/thunks/users-thunk'
 
 

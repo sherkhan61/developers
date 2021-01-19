@@ -1,12 +1,12 @@
 import React from 'react'
 import Profile from './Profile'
-import {getProfile, getStatus, savePhoto, saveProfile, updateStatus} from '../../Redux/profile-reducer'
 import {compose} from 'redux'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {AppStateType} from '../../Redux/redux-store'
 import {RouteComponentProps} from 'react-router'
 import {ProfileType} from '../../types/types'
+import {getProfile, getStatus, savePhoto, saveProfile, updateStatus} from '../../Redux/thunks/profile-thunk'
 
 
 class ProfileContainer extends React.Component<PropsType> {

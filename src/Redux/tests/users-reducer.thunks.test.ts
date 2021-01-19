@@ -1,6 +1,7 @@
-import {actions, followThunk, unfollowThunk} from './reducers/users-reducer'
-import {usersAPI} from '../API/users-api'
-import {APIResponseType, ResultCodesEnum} from '../API/api'
+import {usersAPI} from '../../API/users-api'
+import {APIResponseType, ResultCodesEnum} from '../../API/api'
+import {followThunk, unfollowThunk} from '../thunks/users-thunk'
+import {actions} from '../actions/users-action'
 
 
 jest.mock('../API/users-api')

@@ -1,5 +1,5 @@
-import {getAuth} from '../auth-reducer'
 import {actions} from '../actions/app-action'
+import {getAuth} from './auth-thunk'
 
 
 

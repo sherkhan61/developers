@@ -1,6 +1,5 @@
-import profileReducer, {actions} from "./profile-reducer";
-import React from "react";
-import {ProfileType} from "../types/types";
+import profileReducer, {} from '../reducers/profile-reducer'
+import {actions} from '../actions/profile-action'
 
 let state = {
     postsData: [

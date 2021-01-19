@@ -1,4 +1,7 @@
-import usersReducer, {actions, InitialStateType} from './reducers/users-reducer'
+import {InitialStateType} from '../../types/users-type'
+import usersReducer from '../reducers/users-reducer'
+import {actions} from '../actions/users-action'
+
 
 let state: InitialStateType
 
