@@ -1,6 +1,6 @@
-import {BaseThunkType, InferActionsTypes} from '../Redux/redux-store'
 import {FormAction} from 'redux-form'
 import {actions} from '../Redux/actions/auth-action'
+import {BaseThunkType, InferActionsTypes} from '../lib/store/root-reducer'
 
 
 export type InitialStateType = {

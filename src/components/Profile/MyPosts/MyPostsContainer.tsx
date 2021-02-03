@@ -1,17 +1,17 @@
 import React from 'react'
 import MyPosts, {DispatchPropsType, MapPropsType} from './MyPosts'
 import {connect} from 'react-redux'
-import {AppStateType} from '../../../Redux/redux-store'
 import {actions} from '../../../Redux/actions/profile-action'
+import {RootState} from '../../../lib/store/root-reducer'
 
 
-let mapStateToProps = (state: AppStateType) => {
+let mapStateToProps = (state: RootState) => {
     return {
         posts: state.profilePage.postsData
     }
 }
 
-const MyPostsContainer = connect<MapPropsType, DispatchPropsType, {}, AppStateType>(mapStateToProps, {
+const MyPostsContainer = connect<MapPropsType, DispatchPropsType, {}, RootState>(mapStateToProps, {
     addPost: actions.addPostActionCreate
 })(MyPosts)
 

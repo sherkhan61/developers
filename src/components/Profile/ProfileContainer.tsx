@@ -3,10 +3,10 @@ import Profile from './Profile'
 import {compose} from 'redux'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {AppStateType} from '../../Redux/redux-store'
 import {RouteComponentProps} from 'react-router'
 import {ProfileType} from '../../types/types'
 import {getProfile, getStatus, savePhoto, saveProfile, updateStatus} from '../../Redux/thunks/profile-thunk'
+import {RootState} from '../../lib/store/root-reducer'
 
 
 class ProfileContainer extends React.Component<PropsType> {
@@ -51,7 +51,7 @@ class ProfileContainer extends React.Component<PropsType> {
 }
 
 
-let mapStateToProps = (state: AppStateType) => {
+let mapStateToProps = (state: RootState) => {
     return ({
         profile: state.profilePage.profile,
         status: state.profilePage.status,

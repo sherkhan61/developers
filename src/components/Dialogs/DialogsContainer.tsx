@@ -3,11 +3,11 @@ import Dialogs from './Dialogs'
 import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 import {compose} from 'redux'
 import {connect} from 'react-redux'
-import {AppStateType} from '../../Redux/redux-store'
 import {actions} from '../../Redux/actions/dialogs-action'
+import {RootState} from '../../lib/store/root-reducer'
 
 
-let mapStateToProps = (state: AppStateType) => {
+let mapStateToProps = (state: RootState) => {
     return {
         dialogsPage: state.dialogsPage
     }

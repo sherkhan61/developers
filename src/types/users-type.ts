@@ -1,6 +1,6 @@
-import {BaseThunkType, InferActionsTypes} from '../Redux/redux-store'
 import {initialState} from '../Redux/reducers/users-reducer'
 import {actions} from '../Redux/actions/users-action'
+import {BaseThunkType, InferActionsTypes} from '../lib/store/root-reducer'
 
 
 export type InitialStateType = typeof initialState

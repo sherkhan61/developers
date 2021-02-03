@@ -5,8 +5,8 @@ import {required} from '../../utils/validators/validators'
 import {useDispatch, useSelector} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import s from '../common/FormsControls/FormsControls.module.css'
-import {AppStateType} from '../../Redux/redux-store'
 import {login} from '../../Redux/thunks/auth-thunk'
+import {RootState} from '../../lib/store/root-reducer'
 
 
 
@@ -54,8 +54,8 @@ const LoginReduxForm = reduxForm<LoginFormValuesType, LoginFormOwnProps>({form: 
 
 
 export const LoginPage: React.FC = () => {
-    const captchaUrl = useSelector((state: AppStateType) => state.auth.captchaUrl)
-    const isAuth = useSelector((state: AppStateType) => state.auth.isAuth)
+    const captchaUrl = useSelector((state: RootState) => state.auth.captchaUrl)
+    const isAuth = useSelector((state: RootState) => state.auth.isAuth)
     const dispatch = useDispatch()
 
 

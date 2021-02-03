@@ -1,10 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
-import {AppStateType} from "../Redux/redux-store";
+import {RootState} from '../lib/store/root-reducer'
 
 
-let mapStateToPropsForRedirect = (state: AppStateType) => {
+let mapStateToPropsForRedirect = (state: RootState) => {
     return {
         isAuth: state.auth.isAuth
     }

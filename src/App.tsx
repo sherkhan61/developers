@@ -9,12 +9,13 @@ import Preloader from './components/common/Preloader/Preloader'
 import {compose} from 'redux'
 import {connect, Provider} from 'react-redux'
 import {HashRouter, NavLink, Route, withRouter} from 'react-router-dom'
-import store, {AppStateType} from './Redux/redux-store'
 import {UsersPage} from './components/Users/UsersContainer'
 import {LoginPage} from './components/Login/LoginPage'
 import News from './components/News/News'
 import {TopHeader} from './components/Header/Header'
 import {initializeApp} from './Redux/thunks/app-thunk'
+import {RootState} from './lib/store/root-reducer'
+import {store} from './lib/store/store'
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -88,7 +89,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
 }
 
 
-const mapStateToProps = (state: AppStateType) => ({
+const mapStateToProps = (state: RootState) => ({
     initialized: state.app.initialized
 })
 
