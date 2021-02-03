@@ -4,9 +4,12 @@ import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 import {AddMessageFormRedux, NewMessageFormValuesType} from './AddMessageForm/AddMessageForm'
 import {InitialStateType} from '../../types/dialogs-type'
+import {useAuthRedirect} from '../../features/authentication/hooks/useAuthRedirect'
 
 
 const Dialogs: React.FC<PropsType> = (props) => {
+    useAuthRedirect();
+
     let state = props.dialogsPage
 
     let dialogsElements = state.dialogsData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>)

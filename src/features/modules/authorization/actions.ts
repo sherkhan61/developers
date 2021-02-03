@@ -1,10 +1,26 @@
-import {authAPI} from '../../API/auth-api'
-import {ResultCodeForCaptcha, ResultCodesEnum} from '../../API/api'
+import {authAPI} from '../../../API/auth-api'
+import {ResultCodeForCaptcha, ResultCodesEnum} from '../../../API/api'
 import {stopSubmit} from 'redux-form'
-import {securityAPI} from '../../API/security-api'
-import {ThunkType} from '../../types/auth-type'
-import {actions} from '../actions/auth-action'
+import {securityAPI} from '../../../API/security-api'
+import {ThunkType} from './reducer'
 
+
+// ==========Action Creators======================
+
+export const actions = {
+    setAuthUserData: (userId: number | null, email: string | null, login: string | null, isAuth: boolean) => ({
+        type: 'SN/auth/SET_USER_DATA',
+        payload: {userId, email, login, isAuth}
+    } as const),
+    getCaptchaUrlSuccess: (captchaUrl: string) => ({
+        type: 'SN/auth/GET_CAPTCHA_URL_SUCCESS',
+        payload: {captchaUrl}
+    } as const)
+}
+
+
+
+// =====================Thunk Creators====================
 
 export const getAuth = (): ThunkType => async (dispatch) => {
     let data = await authAPI.me()

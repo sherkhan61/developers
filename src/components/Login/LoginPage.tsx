@@ -5,8 +5,8 @@ import {required} from '../../utils/validators/validators'
 import {useDispatch, useSelector} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import s from '../common/FormsControls/FormsControls.module.css'
-import {login} from '../../Redux/thunks/auth-thunk'
 import {RootState} from '../../lib/store/root-reducer'
+import {login} from '../../features/modules/authorization/actions'
 
 
 

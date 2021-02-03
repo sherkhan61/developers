@@ -13,9 +13,9 @@ import {UsersPage} from './components/Users/UsersContainer'
 import {LoginPage} from './components/Login/LoginPage'
 import News from './components/News/News'
 import {TopHeader} from './components/Header/Header'
-import {initializeApp} from './Redux/thunks/app-thunk'
 import {RootState} from './lib/store/root-reducer'
 import {store} from './lib/store/store'
+import {initializeApp} from './features/modules/initialization/actions'
 
 
 const { Header, Content, Footer, Sider } = Layout;
