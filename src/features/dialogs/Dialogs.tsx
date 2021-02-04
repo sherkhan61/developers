@@ -1,22 +1,29 @@
 import React from 'react'
 import s from './Dialogs.module.css'
-import DialogItem from './DialogItem/DialogItem'
-import Message from './Message/Message'
-import {AddMessageFormRedux, NewMessageFormValuesType} from './AddMessageForm/AddMessageForm'
-import {InitialStateType} from '../../types/dialogs-type'
 import {useAuthRedirect} from '../../features/authentication/hooks/useAuthRedirect'
+import {actions} from '../../features/dialogs/modules/dialogs/actions'
+import {useDispatch, useSelector} from 'react-redux'
+import {RootState} from '../../lib/store/root-reducer'
+import DialogItem from './DialogItem/DialogItem'
+import {AddMessageFormRedux, NewMessageFormValuesType} from './AddMessageForm/AddMessageForm'
+import {Message} from './Message/Message'
 
-
-const Dialogs: React.FC<PropsType> = (props) => {
+const Dialogs: React.FC = () => {
     useAuthRedirect();
+    const {dialogsPage} = useSelector((state: RootState) => (
+        {
+            dialogsPage: state.dialogsPage
+        }
+    ))
+    const dispatch = useDispatch();
 
-    let state = props.dialogsPage
+    let state = dialogsPage
 
     let dialogsElements = state.dialogsData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>)
     let messagesElements = state.messagesData.map(m => <Message message={m.message} key={m.id}/>)
 
     let addNewMessage = (values: NewMessageFormValuesType) => {
-        props.sendMessage(values.newMessageBody)
+        dispatch(actions.sendMessage(values.newMessageBody))
     }
 
 
@@ -34,11 +41,4 @@ const Dialogs: React.FC<PropsType> = (props) => {
     )
 }
 
-
 export default Dialogs
-
-// types
-type PropsType = {
-    dialogsPage: InitialStateType,
-    sendMessage: (messageText: string) => void
-}

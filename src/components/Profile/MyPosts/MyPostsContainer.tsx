@@ -1,8 +1,8 @@
 import React from 'react'
 import MyPosts, {DispatchPropsType, MapPropsType} from './MyPosts'
 import {connect} from 'react-redux'
-import {actions} from '../../../Redux/actions/profile-action'
 import {RootState} from '../../../lib/store/root-reducer'
+import {actions} from '../../../features/profile/modules/profile/actions'
 
 
 let mapStateToProps = (state: RootState) => {

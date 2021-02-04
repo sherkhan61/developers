@@ -1,5 +1,14 @@
-import {PostType, ProfileType} from '../../types/types'
-import {ActionsTypes, InitialStateType} from '../../types/profile-type'
+
+import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
+import {FormAction} from 'redux-form'
+import {PostType, ProfileType} from '../../../../types/types'
+import {actions} from './actions'
+
+
+export type InitialStateType = typeof initialState
+export type ActionsTypes = InferActionsTypes<typeof actions>
+export type ThunkType = BaseThunkType<ActionsTypes | FormAction>
+
 
 
 export let initialState = {
@@ -56,5 +65,3 @@ const profileReducer = (state = initialState, action: ActionsTypes): InitialStat
 
 
 export default profileReducer
-
-

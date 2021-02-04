@@ -1,7 +1,4 @@
-import {ActionsType, DialogType, InitialStateType, MessageType} from '../../types/dialogs-type'
-
-
-
+import {ActionsType, DialogType, InitialStateType, MessageType} from './actions'
 
 
 export let initialState = {
@@ -37,4 +34,3 @@ const dialogsReducer = (state = initialState, action: ActionsType): InitialState
 
 
 export default dialogsReducer
-

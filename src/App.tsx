@@ -10,12 +10,12 @@ import {compose} from 'redux'
 import {connect, Provider} from 'react-redux'
 import {HashRouter, NavLink, Route, withRouter} from 'react-router-dom'
 import {UsersPage} from './components/Users/UsersContainer'
-import {LoginPage} from './components/Login/LoginPage'
 import News from './components/News/News'
 import {TopHeader} from './components/Header/Header'
 import {RootState} from './lib/store/root-reducer'
 import {store} from './lib/store/store'
 import {initializeApp} from './features/authentication/modules/initialization/actions'
+import {Login} from './features/authentication/Login'
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -23,7 +23,7 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 const ProfileContainer = loadable(() => import('./components/Profile/ProfileContainer'))
-const DialogsContainer = loadable(() => import('./components/Dialogs/DialogsContainer'))
+const Dialogs = loadable(() => import('./features/dialogs/Dialogs'))
 
 
 class App extends React.Component<MapPropsType & DispatchPropsType> {
@@ -73,9 +73,9 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
             <Content style={{ margin: '24px 16px 0' }}>
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                   <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
-                  <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
+                  <Route path={'/dialogs'} render={() => <Dialogs />}/>
                   <Route path={'/users'} render={() => <UsersPage pageTitle={'Developers'}/>}/>
-                  <Route path={'/login'} render={() => <LoginPage />}/>
+                  <Route path={'/login'} render={() => <Login />}/>
                   <Route path={'/news'} render={() => <News/>}/>
               </div>
             </Content>
