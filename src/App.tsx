@@ -15,7 +15,7 @@ import News from './components/News/News'
 import {TopHeader} from './components/Header/Header'
 import {RootState} from './lib/store/root-reducer'
 import {store} from './lib/store/store'
-import {initializeApp} from './features/modules/initialization/actions'
+import {initializeApp} from './features/authentication/modules/initialization/actions'
 
 
 const { Header, Content, Footer, Sider } = Layout;

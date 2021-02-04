@@ -1,5 +1,6 @@
-import {InferActionsTypes} from '../../../lib/store/root-reducer'
+
 import {actions} from './actions'
+import {InferActionsTypes} from '../../../../lib/store/root-reducer'
 
 
 export type InitialStateType = typeof initialState

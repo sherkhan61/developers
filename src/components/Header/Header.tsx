@@ -2,8 +2,8 @@ import React from 'react'
 import 'antd/dist/antd.css'
 import {Avatar, Button, Col, Row} from 'antd'
 import {useDispatch, useSelector} from 'react-redux'
-import {logout} from '../../features/modules/authorization/actions'
-import {selectIsAuth} from '../../features/modules/authorization/selectors'
+import {logout} from '../../features/authentication/modules/authorization/actions'
+import {selectIsAuth} from '../../features/authentication/modules/authorization/selectors'
 
 
 export const TopHeader: React.FC = () => {

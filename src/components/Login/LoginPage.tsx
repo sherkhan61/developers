@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import s from '../common/FormsControls/FormsControls.module.css'
 import {RootState} from '../../lib/store/root-reducer'
-import {login} from '../../features/modules/authorization/actions'
+import {login} from '../../features/authentication/modules/authorization/actions'
 
 
 

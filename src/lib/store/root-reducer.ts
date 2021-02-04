@@ -4,8 +4,8 @@ import dialogsReducer from '../../Redux/reducers/dialogs-reducer'
 import usersReducer from '../../Redux/reducers/users-reducer'
 import {reducer as formReducer} from 'redux-form'
 import {ThunkAction} from 'redux-thunk'
-import {authReducer} from '../../features/modules/authorization/reducer'
-import {appReducer} from '../../features/modules/initialization/reducer'
+import {authReducer} from '../../features/authentication/modules/authorization/reducer'
+import {appReducer} from '../../features/authentication/modules/initialization/reducer'
 
 
 export const rootReducer = combineReducers({

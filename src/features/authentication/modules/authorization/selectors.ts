@@ -1,4 +1,4 @@
-import {RootState} from '../../../lib/store/root-reducer'
+import {RootState} from '../../../../lib/store/root-reducer'
 
 
 export const selectIsAuth = (state: RootState) => {

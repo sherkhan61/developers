@@ -1,6 +1,5 @@
-
-import {BaseThunkType, InferActionsTypes} from '../../../lib/store/root-reducer'
 import {FormAction} from 'redux-form'
+import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {actions} from './actions'
 
 

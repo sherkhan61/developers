@@ -1,7 +1,8 @@
-import {authAPI} from '../../../API/auth-api'
-import {ResultCodeForCaptcha, ResultCodesEnum} from '../../../API/api'
 import {stopSubmit} from 'redux-form'
-import {securityAPI} from '../../../API/security-api'
+
+import {authAPI} from '../../../../API/auth-api'
+import {ResultCodeForCaptcha, ResultCodesEnum} from '../../../../API/api'
+import {securityAPI} from '../../../../API/security-api'
 import {ThunkType} from './reducer'
 
 
