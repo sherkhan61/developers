@@ -1,46 +1,28 @@
-
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {FormAction} from 'redux-form'
-import {PostType, ProfileType} from '../../../../types/types'
-import {actions} from './actions'
+import {ProfileType} from '../../../../types/types'
+import {profileActions} from './actions'
 
 
-export type InitialStateType = typeof initialState
-export type ActionsTypes = InferActionsTypes<typeof actions>
+export type ActionsTypes = InferActionsTypes<typeof profileActions>
 export type ThunkType = BaseThunkType<ActionsTypes | FormAction>
 
-
-
-export let initialState = {
-    postsData: [
-        {id: 1, message: 'Hi, how are you?', likesCount: 11},
-        {id: 2, message: 'Hi, bro', likesCount: 12},
-        {id: 3, message: 'Bla bla bla', likesCount: 12},
-        {id: 4, message: 'Yo Yo Yo Yo Yo', likesCount: 12},
-    ] as Array<PostType>,
-    profile: null as ProfileType | null,
-    status: ''
+type ProfileState = {
+    isFollowing: boolean,
+    followed: boolean,
+    profile: null  | ProfileType,
+    status: string
 }
 
+export const initialState: ProfileState = {
+    isFollowing: false,
+    followed:false,
+    profile: null,
+    status: "Статус Редакса"
+};
 
-const profileReducer = (state = initialState, action: ActionsTypes): InitialStateType => {
+const profileReducer = (state = initialState, action: ActionsTypes): ProfileState => {
     switch (action.type) {
-        case 'SN/PROFILE/ADD-POST': {
-            let newPost = {
-                id: 5,
-                message: action.newPostText,
-                likesCount: 0
-            }
-            return {
-                ...state,
-                postsData: [...state.postsData, newPost]
-            }
-        }
-        case 'SN/PROFILE/DELETE_POST':
-            return {
-                ...state,
-                postsData: state.postsData.filter(p => p.id != action.postId)
-            }
         case 'SN/PROFILE/SET_USERS_PROFILE': {
             return {
                 ...state,
@@ -57,6 +39,18 @@ const profileReducer = (state = initialState, action: ActionsTypes): InitialStat
             return {
                 ...state,
                 profile: {...state.profile, photos: action.photos} as ProfileType,
+            }
+        }
+        case 'SN/TOGGLE_IS_FOLLOWING': {
+            return {
+                ...state,
+                isFollowing: action.isFollowing
+            }
+        }
+        case 'SN/IS_FOLLOWED': {
+            return {
+                ...state,
+                followed: action.isFollowed
             }
         }
     }

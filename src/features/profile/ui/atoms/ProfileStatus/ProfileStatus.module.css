@@ -1,0 +1,43 @@
+.profileStatus {
+    font-size: 1rem;
+    color: #939598;
+    margin-top: 10px;
+    line-height: 23px;
+    position: relative;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+p {
+    padding-right: 20px;
+}
+
+textarea {
+    font-size: 1rem;
+    outline: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #27aae1;
+    border-radius: 0;
+    box-sizing: content-box;
+    background-color: transparent;
+    overflow-y: hidden;
+    padding: 0.8rem 0;
+    -moz-appearance: none;
+    position: absolute;
+    color: #939598;
+}
+
+@media (max-width: 860px) {
+    .userPhoto_block {
+        width: 100vw !important;
+        margin-left: -30px;
+    }
+
+}
+
+@media (max-width: 620px) {
+    .profileStatus {
+        text-align: center;
+    }
+}

@@ -22,7 +22,7 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 
-const ProfileContainer = loadable(() => import('./components/Profile/ProfileContainer'))
+const Profile = loadable(() => import('./features/profile/Profile'))
 const Dialogs = loadable(() => import('./features/dialogs/Dialogs'))
 
 
@@ -72,7 +72,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
             </Header>
             <Content style={{ margin: '24px 16px 0' }}>
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                  <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
+                  <Route path={'/profile/:userId?'} render={() => <Profile />}/>
                   <Route path={'/dialogs'} render={() => <Dialogs />}/>
                   <Route path={'/users'} render={() => <UsersPage pageTitle={'Developers'}/>}/>
                   <Route path={'/login'} render={() => <Login />}/>

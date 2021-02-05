@@ -1,0 +1,120 @@
+.profileForm {
+    padding-top: 20px;
+    font-size: 1.1rem;
+    margin-left: -50px;
+    position: relative;
+    padding-right: 30px;
+}
+
+close {
+    position: absolute;
+    right: 30px;
+    top: 0;
+}
+
+close i {
+    color: #27AAE1;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+close small {
+    display: none;
+    position: absolute;
+    top: -2px;
+}
+
+close:hover small {
+    color: #27AAE1;
+    display: block;
+    position: absolute;
+    top: -100%;
+}
+
+.name_wrapper {
+    display: flex;
+}
+
+input, select {
+    color: #6d6e71;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 7px;
+    border: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+input:focus {
+    background: #27aae1;
+    color: white;
+}
+
+select {
+    padding-top: 5px;
+}
+
+p {
+    padding-bottom: 10px;
+}
+
+.info_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contacts_item {
+    flex-basis: 40%;
+}
+
+
+.editProfile_btn {
+    width: 100%;
+    margin-top: 20px;
+    background: #27aae1;
+    padding: 15px 30px;
+    font-weight: 600;
+    color: white;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.editProfile_btn:hover {
+    background: #149AC9;
+    transition: all 1s;
+}
+
+
+.error {
+    color: #ff8967;
+}
+
+@media (max-width: 630px) {
+    .profileForm {
+        margin-left: 0;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .name_wrapper {
+        flex-direction: column;
+    }
+
+    .info_box {
+        flex-direction: column;
+    }
+
+    .profileForm_close {
+        right: 10px !important;
+    }
+}
