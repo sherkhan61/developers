@@ -4,13 +4,13 @@ export type PostType = {
     likesCount: number
 }
 export type ProfileType = {
-    userId?: number | null
-    lookingForAJob?: boolean | null
-    lookingForAJobDescription?: string | null
-    fullName?: string | null
-    contacts?: ContactsType | null
-    photos?: PhotosType | null
-    aboutMe?: string | null
+    userId?: null | number
+    lookingForAJob?: null | boolean
+    lookingForAJobDescription?: null | string
+    fullName?: null | string
+    contacts?: null | ContactsType
+    photos?: null | PhotosType
+    aboutMe?: null | string
 }
 export type ContactsType = {
     github: string

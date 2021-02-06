@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import classes from './ProfileStatus.module.css'
+import classes from './ProfileStatus.module.scss'
 import {RootState} from '../../../../../lib/store/root-reducer'
 import {updateStatus} from '../../../modules/profile/actions'
 

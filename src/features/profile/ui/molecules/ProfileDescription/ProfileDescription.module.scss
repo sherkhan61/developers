@@ -1,24 +1,20 @@
 .profileDescription {
-    flex: 1;
-    color: #6d6e71;
-    margin-left: 0;
+  flex: 1;
+  color: #6d6e71;
+  margin-left: 0;
+.about_wrapper{
+  margin-left: 1vw;
 }
-
-.about_wrapper {
-    margin-left: 1vw;
-}
-
-.about {
+  .about {
     padding-top: 10px;
     font-size: 1.1rem;
-}
 
-item {
-    padding-bottom: 10px;
-}
+    &_item {
+      padding-bottom: 10px;
+    }
+  }
 
-
-.about_header {
+  .about_header {
     color: #27aae1;
     font-weight: bold;
     position: relative;
@@ -28,9 +24,9 @@ item {
     overflow: hidden;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(183, 184, 184, 0.55);
-}
+  }
 
-.editProfile_btn {
+  .editProfile_btn{
     margin-top: 20px;
     background: #27aae1;
     padding: 15px 30px;
@@ -39,23 +35,22 @@ item {
     border-radius: 30px;
     border: 0;
     cursor: pointer;
-}
-
-.editProfile_btn:hover {
+  }
+  .editProfile_btn:hover{
     background: #149AC9;
     transition: all 1s;
+  }
 }
-
 @media (max-width: 850px) {
-    .profileDescription {
-        margin-top: 4vw;
-    }
+  .profileDescription{
+    margin-top: 4vw;
+  }
 }
 
-@media (max-width: 620px) {
-    .profileDescription button.editProfile_btn {
-        display: block;
-        width: 50%;
-        margin: 20px auto;
-    }
+@media (max-width: 620px)  {
+  .profileDescription button.editProfile_btn{
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+  }
 }

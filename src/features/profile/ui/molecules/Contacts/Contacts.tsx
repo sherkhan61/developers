@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from "react";
-import classes from "./Contacts.module.css"
+import classes from "./Contacts.module.scss"
 import {ContactsType} from '../../../../../types/types'
 
 

@@ -1,41 +1,37 @@
 .profileForm {
-    padding-top: 20px;
-    font-size: 1.1rem;
-    margin-left: -50px;
-    position: relative;
-    padding-right: 30px;
+  padding-top: 20px;
+  font-size: 1.1rem;
+  margin-left: -50px;
+  position: relative;
+  padding-right: 30px;
+&_close{
+  position: absolute;
+  right: 30px;
+  top: 0;
 }
-
-close {
-    position: absolute;
-    right: 30px;
-    top: 0;
-}
-
-close i {
+ &_close i {
     color: #27AAE1;
     font-size: 1.5rem;
     cursor: pointer;
-}
+  }
 
-close small {
-    display: none;
+  &_close small{
+  display: none;
     position: absolute;
-    top: -2px;
-}
-
-close:hover small {
+    top:-2px;
+  }
+  &_close:hover small {
     color: #27AAE1;
     display: block;
     position: absolute;
     top: -100%;
-}
+  }
 
-.name_wrapper {
+  .name_wrapper {
     display: flex;
-}
+  }
 
-input, select {
+  & input, select {
     color: #6d6e71;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -49,33 +45,32 @@ input, select {
     background: transparent;
     margin-bottom: 10px;
     font-size: 1rem;
-}
+  }
 
-input:focus {
+  input:focus {
     background: #27aae1;
     color: white;
-}
+  }
 
-select {
+  & select {
     padding-top: 5px;
-}
+  }
 
-p {
+  & p {
     padding-bottom: 10px;
-}
+  }
 
-.info_box {
+  .info_box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
 
-.contacts_item {
-    flex-basis: 40%;
-}
+    .contacts_item {
+      flex-basis: 40%;
+    }
+  }
 
-
-.editProfile_btn {
+  .editProfile_btn {
     width: 100%;
     margin-top: 20px;
     background: #27aae1;
@@ -86,35 +81,31 @@ p {
     border: 0;
     cursor: pointer;
     outline: none;
-}
+  }
 
-.editProfile_btn:hover {
+  .editProfile_btn:hover {
     background: #149AC9;
     transition: all 1s;
+  }
 }
-
 
 .error {
-    color: #ff8967;
+  color: #ff8967;
 }
-
-@media (max-width: 630px) {
-    .profileForm {
-        margin-left: 0;
-        padding-right: 20px;
-    }
+@media (max-width:630px) {
+ .profileForm{
+   margin-left: 0;
+   padding-right:20px;
+ }
 }
-
-@media (max-width: 480px) {
-    .name_wrapper {
-        flex-direction: column;
-    }
-
-    .info_box {
-        flex-direction: column;
-    }
-
-    .profileForm_close {
-        right: 10px !important;
-    }
+@media (max-width:480px) {
+.name_wrapper{
+  flex-direction: column;
+}
+  .info_box{
+    flex-direction: column;
+  }
+  .profileForm_close {
+    right: 10px !important;
+  }
 }

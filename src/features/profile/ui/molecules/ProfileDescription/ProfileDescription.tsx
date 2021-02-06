@@ -1,5 +1,5 @@
 import React, {FC, useState} from "react";
-import classes from "./ProfileDescription.module.css"
+import classes from "./ProfileDescription.module.scss"
 import {ProfileType} from '../../../../../types/types'
 import {ProfileForm} from '../ProfileForm/ProfileForm'
 import {Contacts} from '../Contacts/Contacts'
