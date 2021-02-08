@@ -1,0 +1,33 @@
+.usersSearch{
+  display: flex;
+  align-items: center;
+
+  input{
+    padding: 5px 15px 5px 25%;
+    color: #dadada;
+    background: #403c3d;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  input::placeholder{
+    color: #dadada;
+    //font-size: 0.8rem;
+  }
+  p {
+    position: relative;
+  }
+  p i {
+    color: #dadada;
+    top:12%;
+    left:5%;
+    position: absolute;
+  }
+}
+@media (max-width: 470px){
+  .usersSearch {
+    width: 60%;
+  }
+}

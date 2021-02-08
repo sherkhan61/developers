@@ -1,0 +1,93 @@
+.friendsBar {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  margin-top: 90px;
+  border-radius: 2px;
+  width: 250px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background: #FFF;
+  color: #777;
+
+
+  a:hover{
+    color: #27aae1;
+    transition: all 1s;
+  }
+  h3 a{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    padding: 12px 20px;
+    color: #777;
+    position: relative;
+    border-bottom: 1px solid #EEE;
+    /* == */
+  }
+
+  .friendInfo {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px;
+    .friend{
+      box-sizing: border-box;
+      flex: 1 0 33.33%;
+      word-break: break-word;
+      text-align: center;
+      padding: 5px;
+      font-size: 0.85rem;
+
+      img {
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+    .friend:hover{
+      color: #27aae1;
+      transition: all 1s;
+    }
+
+  }
+}
+ .active  {
+  position: relative;
+  color: #27aae1;
+  border:0;
+  /*border-top: 4px solid #e67e22;
+  border-bottom: 4px solid #e67e22;
+  margin-top: -4px;*/
+  box-shadow: 0 0 5px #DDD;
+  -moz-box-shadow: 0 0 5px #DDD;
+  -webkit-box-shadow: 0 0 5px #DDD;
+
+  /* == */
+  border-left: 4px solid #27aae1;
+  border-right: 4px solid #27aae1;
+  margin: 0 -4px;
+  /* == */
+}
+.active:before {
+  content: "";
+  position: absolute;
+  /*top: 0;
+  left: 45%;
+  border-top: 5px solid #e67e22;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;*/
+
+  /* == */
+  top: 42%;
+  left: 0;
+  border-left: 5px solid #27aae1;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  /* == */
+}
+@media (max-width: 860px) {
+  .friendsBar{
+    display: none;
+  }
+}

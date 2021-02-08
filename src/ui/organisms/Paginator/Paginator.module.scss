@@ -1,0 +1,117 @@
+
+.paginator_wrapper {
+  margin-bottom: 40px;
+  .paginator{
+    display: flex;
+    justify-content: center;
+  }
+}
+.pageNumber {
+   padding: 5px 10px;
+   font-size: 1.1rem;
+  cursor: pointer;
+  color: #6d6e71;
+ }
+.pageNumber:hover {
+  background: #149AC9;
+  color: white;
+  transition: all 1s;
+  }
+
+.pageNumber.selectedPage {
+  font-weight: bold;
+  border-color: black;
+  background: #27aae1;
+  color: white;
+}
+
+.icon {
+  box-sizing: border-box;
+  position: relative;
+  //transform: translate(-50%,-50%);
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left:30%;
+  width: 34.7%;
+  height: 4px;
+  background-color: #6d6e71;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  animation: arrow 700ms linear infinite;
+}
+
+
+.arrow::after, .arrow::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  right: -6px;
+  background-color: #6d6e71;
+}
+
+.arrow::after {
+  top: -4px;
+  transform: rotate(45deg);
+}
+
+.arrow::before {
+  top: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  transform: rotate(-45deg);
+}
+.left .arrow::after, .left .arrow::before {
+  left: -6px;
+  right: 0;
+}
+.left .arrow::after {
+  transform: rotate(-45deg);
+}
+
+.left .arrow::before {
+  transform: rotate(45deg);
+}
+@media (max-width: 630px) {
+  .pageNumber{
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageNumber {
+    padding: 4px;
+  }
+  .icon {
+    width: 40px;
+  }
+  .left .arrow{
+    left: 50% !important;
+  }
+  .paginator:last-child.arrow{
+    left: 20%;
+  }
+  .arrow::after, .arrow::before{
+    right: -4px;
+  }
+  .arrow::after {
+    top: -3px;
+  }
+
+  .arrow::before {
+    top: 3px;
+  }
+  .left .arrow::after,  .left  .arrow::before{
+    left: -4px !important;
+  }
+  .left .arrow::after {
+    top: -3px;
+  }
+  .left  .arrow::before {
+    top: 3px;
+  }
+}

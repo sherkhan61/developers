@@ -1,0 +1,21 @@
+.followBtn{
+  background: #27aae1;
+  padding: 10px 10px;
+  font-weight: 600;
+  color: white;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+
+}
+.followBtn:hover{
+  background: #149AC9;
+  transition: all 1s;
+}
+@media (max-width: 1100px) {
+  .followBtn{
+    width: 100%;
+    flex-basis: auto !important;
+  }
+}
