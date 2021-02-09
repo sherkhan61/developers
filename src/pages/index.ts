@@ -1,0 +1,5 @@
+export { default as DialogsPage } from '../pages/dialogs/index'
+export { default as UsersPage } from '../pages/users/index'
+export { default as FriendsPage } from '../pages/friends/index'
+export { default as SearchPage } from '../pages/search/index'
+export { default as LoginPage } from '../pages/login/index'

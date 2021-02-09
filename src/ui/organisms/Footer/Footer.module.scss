@@ -1,0 +1,14 @@
+.footer{
+  flex-basis: 100%;
+  flex: 0 0 auto;
+  background: #2B2728;
+  padding: 20px 0;
+  &_content{
+    max-width: 1050px;
+    margin: auto;
+    text-align: center;
+    color: white;
+    resize: none;
+    overflow: auto;
+  }
+}

@@ -2,6 +2,7 @@ import {stopSubmit} from 'redux-form'
 import {ThunkType} from './reducer'
 import {PhotosType, profileAPI, ProfileType, usersAPI} from '../../../../api/social-api'
 import {getFriendsDemo} from '../../../users/modules/users/actions'
+import {DispatchType, RootState} from '../../../../lib/store/root-reducer'
 
 
 // ==========Action Creators======================
@@ -43,19 +44,14 @@ export const savePhoto = (file: File): ThunkType => async (dispatch) => {
     }
 }
 
-export const saveProfile = (profile: ProfileType): ThunkType => async (dispatch, getState) => {
-    const userId = getState().auth.userId
-    const data = await profileAPI.saveProfile(profile)
-    if (data.resultCode === 0) {
-        if (userId != null) {
-            dispatch(getProfile(userId))
-        } else {
-            throw new Error('userId can\'t be null')
+export const saveProfile = (profile: ProfileType): ThunkType => async (dispatch: DispatchType, getState: () => RootState) => {
+    const response = await profileAPI.saveProfile(profile)
+    if (response.data.resultCode === 0) {
+        if ("userId" in getState().auth.user) {
+            await dispatch(getProfile(getState().auth.user.userId!));
         }
-
     } else {
-        dispatch(stopSubmit('edit-profile', {_error: data.messages[0]}))
-        return Promise.reject(data.messages[0])
+        return response.data.messages;
     }
 }
 

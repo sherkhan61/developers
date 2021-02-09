@@ -3,9 +3,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import styles from './FriendsBar.module.scss'
 import avatar_undefined from '../../../../../ui/assets/images/avatar-undefined.jpg'
 import {Link, NavLink} from 'react-router-dom'
-import Preloader from '../../../../../components/common/Preloader/Preloader'
 import {getFriendsDemo} from '../../../modules/users/actions'
 import {RootState} from '../../../../../lib/store/root-reducer'
+import Preloader from '../../../../../ui/organisms/Preloader/Preloader'
 
 
 interface IFriendsBarProps {

@@ -5,8 +5,8 @@ import {shallowEqual, useDispatch, useSelector} from 'react-redux'
 import {RootState} from '../../lib/store/root-reducer'
 import {getProfile, getStatus, profileActions} from './modules/profile/actions'
 import avatarUndefined from '../../ui/assets/images/avatar-undefined.jpg'
-import Preloader from '../../components/common/Preloader/Preloader'
 import {ProfileInfo} from './ui/organisms/ProfileInfo/ProfileInfo'
+import Preloader from '../../ui/organisms/Preloader/Preloader'
 
 
 type PathParamsType = {

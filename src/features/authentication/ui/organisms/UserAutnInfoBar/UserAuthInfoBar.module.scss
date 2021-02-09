@@ -1,0 +1,33 @@
+.userInfo {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-basis: 17%;
+  cursor: pointer;
+  position: relative;
+  padding: 0 1rem;
+  font-size: 1rem;
+  align-self: stretch;
+  &:hover {
+    background: #242021;
+  }
+  &_photo {
+    img{
+      border-radius: 50%;
+      width: 50px;
+    }
+  }
+
+  &_name {
+    padding-right: 1rem;
+  }
+}
+
+
+
+.login_link {
+  color: white;
+  text-decoration: none;
+}

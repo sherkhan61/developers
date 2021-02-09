@@ -11,7 +11,7 @@ export let initialState = {
 }
 
 
-export const appReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
+export const initReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case 'SN/APP/INITIALIZED_SUCCESS':
             return {

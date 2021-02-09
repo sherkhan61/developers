@@ -1,0 +1,14 @@
+.sign_in{
+  color: white;
+  flex-basis: 7%;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  i{
+  padding-left: 5px;
+  }
+}
+.sign_in:hover{
+  color: #27AAE1;
+  transition: all 1s;
+}

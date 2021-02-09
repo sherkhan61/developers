@@ -1,20 +1,17 @@
-import {Action, combineReducers} from 'redux'
+import {Action, AnyAction, combineReducers} from 'redux'
 import {reducer as formReducer} from 'redux-form'
-import {ThunkAction} from 'redux-thunk'
+import {ThunkAction, ThunkDispatch} from 'redux-thunk'
 import {authReducer} from '../../features/authentication/modules/authorization/reducer'
-import {appReducer} from '../../features/authentication/modules/initialization/reducer'
-import dialogsReducer from '../../features/dialogs/modules/dialogs/reducer'
+import {initReducer} from '../../features/authentication/modules/initialization/reducer'
 import profileReducer from '../../features/profile/modules/profile/reducer'
 import usersReducer from '../../features/users/modules/users/reducer'
 
 
 export const rootReducer = combineReducers({
     profilePage: profileReducer,
-    dialogsPage: dialogsReducer,
     usersPage: usersReducer,
     auth: authReducer,
-    form: formReducer,
-    app: appReducer
+    init: initReducer
 })
 
 
@@ -25,3 +22,4 @@ export type InferActionsTypes<T> = T extends { [key: string]: (...args: any[]) =
 
 export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, RootState, unknown, A>
 
+export type DispatchType = ThunkDispatch<RootState, void, AnyAction>;

@@ -12,9 +12,9 @@ import {
     getUsersPage
 } from './modules/users/selectors'
 import {getUsers, search, usersActions} from './modules/users/actions'
-import Preloader from '../../components/common/Preloader/Preloader'
 import {User} from './ui/organisms/User/User'
 import {Paginator} from '../../ui/organisms/Paginator/Paginator'
+import Preloader from '../../ui/organisms/Preloader/Preloader'
 
 
 let isEmpty = (arr: Array<any>) => {

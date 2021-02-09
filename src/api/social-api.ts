@@ -1,4 +1,13 @@
-import axios from 'axios'
+import axios, {AxiosResponse} from 'axios'
+
+
+
+
+export type APIResponseType<T = {}> = {
+    resultCode: number,
+    messages: Array<any> | string,
+    data: T
+}
 
 
 export type LoginInfoType = {
@@ -76,19 +85,21 @@ export const profileAPI = {
     updateStatus(status: string) {
         return instance.put<APIResponseType>('profile/status', {status: status}).then(res => res.data)
     },
-    savePhoto(photoFile: File) {
-        let formData = new FormData();
-        formData.append("image", photoFile)
-        return instance.put<APIResponseType<SavePhotoResponseType>>('profile/photo', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        }).then(res => res.data)
+    savePhoto(photoFile: File): Promise<APIResponseType<{photos:PhotosType}> | never> {
+        const formData = new FormData();
+        formData.append("newPhoto", photoFile);
+        return instance.put('/profile/photo', formData)
+            .then((response) => {
+                if (response.data.resultCode === 0) {
+                    return response.data;
+                }
+            });
     },
-    saveProfile(profile: ProfileType) {
-        return instance.put<APIResponseType>('profile', profile).then(res => res.data)
+    saveProfile(profile: ProfileType): Promise<AxiosResponse<APIResponseType>> {
+        return instance.put('/profile/', profile).then((response) => {
+            return response;
+        })
     }
-
 }
 
 
@@ -131,22 +142,8 @@ export const instance = axios.create({
 })
 
 
-export enum ResultCodesEnum {
-    Success = 0,
-    Error = 1,
-}
-
-export enum ResultCodeForCaptcha {
-    CaptchaIsRequired = 10,
-}
-
 export type GetsItemsType = {
     items: Array<UserType>
     totalCount: number
     error: string | null
-}
-export type APIResponseType<D = {}, RC = ResultCodesEnum | ResultCodeForCaptcha> = {
-    data: D
-    messages: Array<string>
-    resultCode: RC
 }

@@ -13,6 +13,6 @@ export const initActions = {
 // =====================Thunk Creators====================
 
 export const initializeApp = () => async (dispatch: any) => {
-    let promise = await dispatch(getAuth())
+    let promise = await dispatch(getAuth(true))
     dispatch(initActions.initializedSuccess())
 }

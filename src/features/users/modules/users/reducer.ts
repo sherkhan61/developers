@@ -1,7 +1,7 @@
-import {updateObjectInArray} from '../../../../utils/object-helpers'
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {UserType} from '../../../../api/social-api'
 import {usersActions} from './actions'
+import {updateObjectInArray} from '../../../../utils/obj-helpers'
 
 
 export type InitialStateType = typeof initialState
@@ -27,13 +27,13 @@ const usersReducer = (state = initialState, action: ActionsTypes): InitialStateT
         case 'SN/USERS/FOLLOW':
             return {
                 ...state,
-                users: updateObjectInArray(state.users, action.userId, 'id', {followed: true})
+                users: updateObjectInArray(state.users, action.userId, {followed: true})
             }
 
         case 'SN/USERS/UNFOLLOW':
             return {
                 ...state,
-                users: updateObjectInArray(state.users, action.userId, 'id', {followed: false})
+                users: updateObjectInArray(state.users, action.userId, {followed: false})
             }
 
         case 'SN/USERS/SET_USERS':
