@@ -1,14 +1,23 @@
-import React, {FC, useEffect} from "react";
-import {shallowEqual, useDispatch, useSelector} from "react-redux";
-import {usersActions, usersSelectors} from "./modules/users/";
-import {User} from "@users/ui/organisms/User/User";
-import {Paginator, Preloader} from "@ui";
-import classes from "./Users.module.scss"
-import {useLocation, useParams} from "react-router";
-import {RootState} from "@store/root-reducer";
+import React, {FC, useEffect} from 'react'
+import {shallowEqual, useDispatch, useSelector} from 'react-redux'
+import classes from './Users.module.scss'
+import {useLocation, useParams} from 'react-router'
+import {RootState} from '../../lib/store/root-reducer'
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount,
+    getUsersPage
+} from './modules/users/selectors'
+import {getUsers, search, usersActions} from './modules/users/actions'
+import Preloader from '../../components/common/Preloader/Preloader'
+import {User} from './ui/organisms/User/User'
+import {Paginator} from '../../ui/organisms/Paginator/Paginator'
 
 
-function isEmpty(arr: Array<any>) {
+let isEmpty = (arr: Array<any>) => {
   for (let key in arr) {
 
     return false;
@@ -16,7 +25,7 @@ function isEmpty(arr: Array<any>) {
   return true;
 }
 
-interface IUsersParams {
+type IUsersParams = {
   term: string
 }
 
@@ -29,12 +38,12 @@ export const Users: FC = () => {
     users: usersList, pageSize, totalUsersCount, currentPage, isFetching, isFollowing, isAuth
   } = useSelector((state: RootState) => (
       {
-        users: usersSelectors.getUsers(state),
-        pageSize: usersSelectors.getPageSize(state),
-        totalUsersCount: usersSelectors.getTotalUsersCount(state),
-        currentPage: usersSelectors.getCurrentPage(state),
-        isFetching: state.init.isFetching,
-        isFollowing: usersSelectors.getIsFollowing(state),
+        users: getUsersPage(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        isFollowing: getFollowingInProgress(state),
         isAuth: state.auth.isAuth
       }
   ), shallowEqual);
@@ -43,9 +52,9 @@ export const Users: FC = () => {
 
   useEffect(() => {
     if (path.startsWith("/search/")) {
-      dispatch(usersActions.search(searchTerm));
+      dispatch(search(searchTerm));
     } else {
-      dispatch(usersActions.getUsers(pageSize,
+      dispatch(getUsers(pageSize,
           currentPage,
           isFriends));
     }

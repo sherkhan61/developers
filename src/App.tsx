@@ -9,13 +9,13 @@ import Preloader from './components/common/Preloader/Preloader'
 import {compose} from 'redux'
 import {connect, Provider} from 'react-redux'
 import {HashRouter, NavLink, Route, withRouter} from 'react-router-dom'
-import {UsersPage} from './components/Users/UsersContainer'
 import News from './components/News/News'
 import {TopHeader} from './components/Header/Header'
 import {RootState} from './lib/store/root-reducer'
 import {store} from './lib/store/store'
 import {initializeApp} from './features/authentication/modules/initialization/actions'
 import {Login} from './features/authentication/Login'
+import {Users} from './features/users'
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -74,7 +74,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                   <Route path={'/profile/:userId?'} render={() => <Profile />}/>
                   <Route path={'/dialogs'} render={() => <Dialogs />}/>
-                  <Route path={'/users'} render={() => <UsersPage pageTitle={'Developers'}/>}/>
+                  <Route path={'/users'} render={() => <Users />}/>
                   <Route path={'/login'} render={() => <Login />}/>
                   <Route path={'/news'} render={() => <News/>}/>
               </div>

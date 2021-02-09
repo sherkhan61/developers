@@ -1,10 +1,9 @@
-
-import {actions} from './actions'
 import {InferActionsTypes} from '../../../../lib/store/root-reducer'
+import {initActions} from './actions'
 
 
 export type InitialStateType = typeof initialState
-export type ActionsType = InferActionsTypes<typeof actions>
+export type ActionsType = InferActionsTypes<typeof initActions>
 
 
 export let initialState = {

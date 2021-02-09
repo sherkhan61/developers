@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from "react";
 import classes from "./Contacts.module.scss"
-import {ContactsType} from '../../../../../types/types'
+import {ContactsType} from '../../../../../api/social-api'
 
 
 const capitalizeFirstLetter = (string: string): string => {

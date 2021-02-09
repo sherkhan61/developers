@@ -1,12 +1,12 @@
 import React, {ChangeEvent, FC, useEffect} from 'react'
 import classes from './ProfileInfo.module.scss'
 import {shallowEqual, useDispatch, useSelector} from 'react-redux'
-import {ProfileType} from '../../../../../types/types'
 import {RootState} from '../../../../../lib/store/root-reducer'
 import {followUser, isUserFollowed, savePhoto, unFollowUser} from '../../../modules/profile/actions'
 import {ProfileStatus} from '../../atoms/ProfileStatus/ProfileStatus'
 import {Link} from 'react-router-dom'
 import {ProfileDescription} from '../../molecules/ProfileDescription/ProfileDescription'
+import {ProfileType} from '../../../../../api/social-api'
 
 
 

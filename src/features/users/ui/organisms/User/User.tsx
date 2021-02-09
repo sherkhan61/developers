@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import {Link, NavLink} from "react-router-dom";
-import {FollowBtn} from "@users/ui/atoms/FollowBtn/FollowBtn";
 import classes from "./User.module.scss"
-import ava_undefined from "@ui/assets/images/avatar-undefined.jpg"
+import ava_undefined from "../../../../../ui/assets/images/avatar-undefined.jpg"
+import {FollowBtn} from '../../atoms/FollowBtn/FollowBtn'
 
 interface IUserProps {
   isAuth: boolean

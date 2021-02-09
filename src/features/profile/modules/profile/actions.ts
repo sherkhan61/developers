@@ -1,8 +1,7 @@
-import {PhotosType, ProfileType} from '../../../../types/types'
-import {profileAPI} from '../../../../API/profile-api'
 import {stopSubmit} from 'redux-form'
 import {ThunkType} from './reducer'
-import {usersAPI} from '../../../../API/users-api'
+import {PhotosType, profileAPI, ProfileType, usersAPI} from '../../../../api/social-api'
+import {getFriendsDemo} from '../../../users/modules/users/actions'
 
 
 // ==========Action Creators======================
@@ -65,7 +64,7 @@ export const followUser = (): ThunkType => async (dispatch, getState) => {
     let data = await usersAPI.follow(getState().profilePage.profile!.userId!)
     dispatch(profileActions.isFollowed(true))
     dispatch(profileActions.toggleIsFollowing(false))
-    /*dispatch(actions.usersActions.getFriendsDemo(6, 1))*/
+    dispatch(getFriendsDemo(6, 1))
 }
 
 export const unFollowUser = (): ThunkType => async (dispatch, getState) => {
@@ -73,7 +72,7 @@ export const unFollowUser = (): ThunkType => async (dispatch, getState) => {
     let data = await usersAPI.unfollow(getState().profilePage.profile!.userId!)
     dispatch(profileActions.isFollowed(false))
     dispatch(profileActions.toggleIsFollowing(false))
-    /*dispatch(actions.usersActions.getFriendsDemo(6, 1))*/
+    dispatch(getFriendsDemo(6, 1))
 }
 
 export const isUserFollowed = (userId: number): ThunkType => async (dispatch) => {

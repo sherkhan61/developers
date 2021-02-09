@@ -6,7 +6,7 @@
 
 import {getAuth} from '../authorization/actions'
 
-export const actions = {
+export const initActions = {
     initializedSuccess: () => ({type: 'SN/APP/INITIALIZED_SUCCESS'} as const)
 }
 
@@ -14,5 +14,5 @@ export const actions = {
 
 export const initializeApp = () => async (dispatch: any) => {
     let promise = await dispatch(getAuth())
-    dispatch(actions.initializedSuccess())
+    dispatch(initActions.initializedSuccess())
 }

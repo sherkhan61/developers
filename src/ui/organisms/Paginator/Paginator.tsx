@@ -1,7 +1,7 @@
 import React, {FC, ReactNode, useState} from "react";
 import classes from "./Paginator.module.scss"
 
-interface IPaginatorProps {
+type PropsType = {
   portionSize?: number
   totalUsersCount: number
   pageSize: number
@@ -9,7 +9,7 @@ interface IPaginatorProps {
   onPageChanged: (p: number)=> void
 }
 
-export const Paginator: FC<IPaginatorProps> = ({
+export const Paginator: FC<PropsType> = ({
  portionSize = 10, totalUsersCount, pageSize, currentPage, onPageChanged }) => {
 
   const isMobile: boolean = document.documentElement.clientWidth <= 480;

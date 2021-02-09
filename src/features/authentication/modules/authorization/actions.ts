@@ -1,9 +1,6 @@
 import {stopSubmit} from 'redux-form'
-
-import {authAPI} from '../../../../API/auth-api'
-import {ResultCodeForCaptcha, ResultCodesEnum} from '../../../../API/api'
-import {securityAPI} from '../../../../API/security-api'
 import {ThunkType} from './reducer'
+import {authAPI, ResultCodeForCaptcha, ResultCodesEnum, securityAPI} from '../../../../api/social-api'
 
 
 // ==========Action Creators======================

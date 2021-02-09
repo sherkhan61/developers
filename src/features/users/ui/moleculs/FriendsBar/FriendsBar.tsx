@@ -1,11 +1,11 @@
-import React, {FC, useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import styles from "./FriendsBar.module.scss"
-import {Preloader} from "@ui";
-import avatar_undefined from "@ui/assets/images/avatar-undefined.jpg"
-import {Link, NavLink} from "react-router-dom";
-import {usersActions} from "@users/modules/users";
-import {RootState} from "@store/root-reducer";
+import React, {FC, useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import styles from './FriendsBar.module.scss'
+import avatar_undefined from '../../../../../ui/assets/images/avatar-undefined.jpg'
+import {Link, NavLink} from 'react-router-dom'
+import Preloader from '../../../../../components/common/Preloader/Preloader'
+import {getFriendsDemo} from '../../../modules/users/actions'
+import {RootState} from '../../../../../lib/store/root-reducer'
 
 
 interface IFriendsBarProps {
@@ -16,10 +16,10 @@ export const FriendsBar:FC<IFriendsBarProps> = ({clearPage}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(usersActions.getFriendsDemo(6, 1));
+    dispatch(getFriendsDemo(6, 1));
   }, [dispatch]);
 
-  const friends = useSelector((state:RootState) => state.users.friends);
+  const friends = useSelector((state:RootState) => state.usersPage.friends);
 
   const friendsElements = friends.map((friend) => {
     return (

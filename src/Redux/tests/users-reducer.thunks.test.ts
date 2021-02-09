@@ -1,5 +1,5 @@
-import {usersAPI} from '../../API/users-api'
-import {APIResponseType, ResultCodesEnum} from '../../API/api'
+import {usersAPI} from '../../api/users-api'
+import {APIResponseType, ResultCodesEnum} from '../../api/api'
 import {followThunk, unfollowThunk} from '../thunks/users-thunk'
 import {actions} from '../actions/users-action'
 

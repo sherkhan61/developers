@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import {useSelector} from "react-redux";
-import {FriendsBar} from "@users/ui/moleculs/FriendsBar/FriendsBar";
 import {RootState} from "../../lib/store/root-reducer";
+import {FriendsBar} from './ui/moleculs/FriendsBar/FriendsBar'
 
 export interface IFriendsProps {
   clearPage: () => void

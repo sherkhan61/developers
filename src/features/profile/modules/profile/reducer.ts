@@ -1,7 +1,7 @@
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {FormAction} from 'redux-form'
-import {ProfileType} from '../../../../types/types'
 import {profileActions} from './actions'
+import {ProfileType} from '../../../../api/social-api'
 
 
 export type ActionsTypes = InferActionsTypes<typeof profileActions>
