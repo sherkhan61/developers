@@ -1,7 +1,7 @@
 import {Redirect, Route, Switch} from "react-router";
 import React, {lazy, Suspense} from "react";
-import Preloader from './ui/organisms/Preloader/Preloader'
 import {DialogsPage, UsersPage, FriendsPage, SearchPage, LoginPage} from './pages'
+import {Preloader} from './ui/atoms/preloader/Preloader'
 
 
 const ProfilePage = lazy(() => import("./pages/profile").then(({ProfilePage}) => (
@@ -9,6 +9,7 @@ const ProfilePage = lazy(() => import("./pages/profile").then(({ProfilePage}) =>
 )));
 
 export const Routes = () => {
+
   return <Suspense fallback={<Preloader/>}>
     <Switch>
       <Route path={'/profile/:userId?'}>

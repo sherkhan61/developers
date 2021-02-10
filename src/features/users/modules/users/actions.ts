@@ -40,7 +40,7 @@ export const getUsers = (page: number, pageSize: number, isFriend: boolean = fal
         let data = await usersAPI.getUsers(page, pageSize, isFriend, term)
         dispatch(usersActions.toggleIsFetching(false))
         dispatch(usersActions.setUsers(data.items))
-        dispatch(usersActions.setTotalUsersCount(data.totalCount))
+        dispatch(usersActions.setTotalUsersCount(data.totalCount!))
     }
 }
 

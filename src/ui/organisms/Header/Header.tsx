@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react';
 import classes from './Header.module.scss'
-import logo from "../../../assets/images/logo.svg"
+import logo from "../../../ui/assets/images/logo.svg"
 
 interface IHeaderProps {
   children: Array<ReactNode>

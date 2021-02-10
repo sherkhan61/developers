@@ -4,6 +4,7 @@ import {Users} from '../../features/users'
 
 
 const FriendsPage = () => {
+    debugger
     return (
         <CommonTemplate>
             <Users/>

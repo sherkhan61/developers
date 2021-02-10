@@ -5,7 +5,7 @@ import {connect, ConnectedProps} from 'react-redux'
 import {Routes} from './Routes'
 import {DispatchType, RootState} from './lib/store/root-reducer'
 import {initializeApp} from './features/authentication/modules/initialization/actions'
-import Preloader from './ui/organisms/Preloader/Preloader'
+import {Preloader} from './ui/atoms/preloader/Preloader'
 
 
 

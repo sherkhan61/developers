@@ -1,4 +1,3 @@
-import {FormAction} from 'redux-form'
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {actions} from './actions'
 import {ProfileType} from '../../../../api/social-api'
@@ -12,7 +11,7 @@ export type InitialStateType = {
 
 
 export type ActionsTypes = InferActionsTypes<typeof actions>
-export type ThunkType = BaseThunkType<ActionsTypes | FormAction>
+export type ThunkType = BaseThunkType<ActionsTypes>
 
 
 export let initialState: InitialStateType = {

@@ -1,4 +1,3 @@
-import {stopSubmit} from 'redux-form'
 import {ThunkType} from './reducer'
 import {
     authAPI,
@@ -46,8 +45,10 @@ export const login = (email: string, password: string, rememberMe: boolean, capt
         if (data.resultCode === 10) {
             dispatch(getCaptchaUrl())
         }
-        let message = data.messages.length > 0 ? data.messages[0] : 'Some error'
-        dispatch(stopSubmit('login', {_error: message}))
+        const error = data.messages.length > 0 ?
+            data.messages[0] :
+            "Unknown Error";
+        return error;
     }
 }
 

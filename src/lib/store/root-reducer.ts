@@ -1,5 +1,4 @@
 import {Action, AnyAction, combineReducers} from 'redux'
-import {reducer as formReducer} from 'redux-form'
 import {ThunkAction, ThunkDispatch} from 'redux-thunk'
 import {authReducer} from '../../features/authentication/modules/authorization/reducer'
 import {initReducer} from '../../features/authentication/modules/initialization/reducer'

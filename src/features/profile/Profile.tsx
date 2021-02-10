@@ -6,7 +6,7 @@ import {RootState} from '../../lib/store/root-reducer'
 import {getProfile, getStatus, profileActions} from './modules/profile/actions'
 import avatarUndefined from '../../ui/assets/images/avatar-undefined.jpg'
 import {ProfileInfo} from './ui/organisms/ProfileInfo/ProfileInfo'
-import Preloader from '../../ui/organisms/Preloader/Preloader'
+import {Preloader} from '../../ui/atoms/preloader/Preloader'
 
 
 type PathParamsType = {
@@ -23,7 +23,7 @@ const Profile: React.FC = () => {
     const {profile, authUserId} = useSelector((state: RootState) => {
         return {
             profile: state.profilePage.profile,
-            authUserId: state.auth.userId
+            authUserId: state.auth.user.userId
         }
     }, shallowEqual);
 
@@ -40,6 +40,7 @@ const Profile: React.FC = () => {
             dispatch(profileActions.setUsersProfile(null))
         })
     }, [selectedId, dispatch, isAuth, userId]);
+
     return (
         <>
             {!profile ?
@@ -50,7 +51,6 @@ const Profile: React.FC = () => {
                                      profile={profile}
                                      userId={userId as number}
                                      isAuth={isAuth}
-                            // head_img={profileCommon}
                                      myAva_img={profile.photos?.small || avatarUndefined}
                         />
                     </>

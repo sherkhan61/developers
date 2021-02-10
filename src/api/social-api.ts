@@ -44,10 +44,29 @@ export type PhotosType = {
 export type UserType = {
     id: number
     name: string
-    status: string
+    status: null | string
     photos: PhotosType
     followed: boolean
 }
+
+
+export type GetsItemsType = {
+    items: Array<UserType>
+    totalCount?: number
+    error?: string | null
+}
+
+export const instance = axios.create({
+    withCredentials: true,
+    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
+    headers: {
+        'API-KEY': '11f6f6da-a19a-4694-bc7f-68eb9e84e954'
+    }
+})
+
+
+
+
 
 type MeResponseDataType = {
     id: number, email: string, login: string
@@ -133,17 +152,4 @@ export const usersAPI = {
 }
 
 
-export const instance = axios.create({
-    withCredentials: true,
-    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
-    headers: {
-        'API-KEY': '11f6f6da-a19a-4694-bc7f-68eb9e84e954'
-    }
-})
 
-
-export type GetsItemsType = {
-    items: Array<UserType>
-    totalCount: number
-    error: string | null
-}

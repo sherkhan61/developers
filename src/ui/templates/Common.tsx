@@ -13,7 +13,7 @@ export type CommonTemplatePropsType = {
     clearMusicSearch?: () => void
 }
 
-export const CommonTemplate: FC<CommonTemplatePropsType> = ({children, clearMusicSearch}) => {
+export const CommonTemplate: FC<CommonTemplatePropsType> = ({children}) => {
     const dispatch = useDispatch()
     const clearPage = (): void => {
         dispatch(usersActions.setCurrentPage(1))

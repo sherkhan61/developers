@@ -1,11 +1,10 @@
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
-import {FormAction} from 'redux-form'
 import {profileActions} from './actions'
 import {ProfileType} from '../../../../api/social-api'
 
 
 export type ActionsTypes = InferActionsTypes<typeof profileActions>
-export type ThunkType = BaseThunkType<ActionsTypes | FormAction>
+export type ThunkType = BaseThunkType<ActionsTypes>
 
 type ProfileState = {
     isFollowing: boolean,

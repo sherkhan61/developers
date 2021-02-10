@@ -4,6 +4,7 @@ import Profile from '../../features/profile/Profile'
 
 
 export const ProfilePage: FC = () => {
+
   return (
     <CommonTemplate>
       <Profile/>

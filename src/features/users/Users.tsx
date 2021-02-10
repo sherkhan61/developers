@@ -14,7 +14,7 @@ import {
 import {getUsers, search, usersActions} from './modules/users/actions'
 import {User} from './ui/organisms/User/User'
 import {Paginator} from '../../ui/organisms/Paginator/Paginator'
-import Preloader from '../../ui/organisms/Preloader/Preloader'
+import {Preloader} from '../../ui/atoms/preloader/Preloader'
 
 
 let isEmpty = (arr: Array<any>) => {

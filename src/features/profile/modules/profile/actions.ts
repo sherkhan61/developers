@@ -1,4 +1,3 @@
-import {stopSubmit} from 'redux-form'
 import {ThunkType} from './reducer'
 import {PhotosType, profileAPI, ProfileType, usersAPI} from '../../../../api/social-api'
 import {getFriendsDemo} from '../../../users/modules/users/actions'
@@ -44,7 +43,7 @@ export const savePhoto = (file: File): ThunkType => async (dispatch) => {
     }
 }
 
-export const saveProfile = (profile: ProfileType): ThunkType => async (dispatch: DispatchType, getState: () => RootState) => {
+export const saveProfile = (profile: ProfileType) => async (dispatch: DispatchType, getState: () => RootState) => {
     const response = await profileAPI.saveProfile(profile)
     if (response.data.resultCode === 0) {
         if ("userId" in getState().auth.user) {
