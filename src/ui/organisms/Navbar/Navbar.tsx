@@ -1,13 +1,14 @@
 import React, {FC} from 'react'
 import styles from './Navbar.module.scss'
 import {NavLink} from 'react-router-dom'
+import {ICommonTemplateProps} from '../../templates/Common'
 
 
-interface PropsType {
+interface PropsType extends ICommonTemplateProps {
     clearPage: () => void
 }
 
-export const Navbar: FC<PropsType> = ({children, clearPage}) => {
+export const Navbar: FC<PropsType> = ({children, clearPage, clearMusicSearch}) => {
 
     const isMobile: boolean = document.documentElement.clientWidth <= 860
 
@@ -31,6 +32,24 @@ export const Navbar: FC<PropsType> = ({children, clearPage}) => {
                             <i className="fa fa-users"/>
                             <strong>Users</strong>
                             <small>our developers</small>
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/news" activeClassName={styles.active}>
+                            <i className="fa fa-globe"/>
+                            <strong>News</strong>
+                            <small>breaking news</small>
+                        </NavLink>
+                    </li>
+
+
+                    <li>
+                        <NavLink to="/music" activeClassName={styles.active}
+                                 onClick={clearMusicSearch}>
+                            <i className="fa fa-music"/>
+                            <strong>Music</strong>
+                            <small>deezer chart</small>
                         </NavLink>
                     </li>
 

@@ -60,8 +60,8 @@ export const Users: FC = () => {
     }
   }, [currentPage, pageSize, dispatch, path, isFriends, searchTerm]);
 
-  const onPageChanged = (pageNumber: number): void => {
-    dispatch(usersActions.setCurrentPage(pageNumber))
+  const onPageChanged = (currentPage: number): void => {
+    dispatch(usersActions.setCurrentPage(currentPage))
   };
 
 

@@ -2,6 +2,8 @@ import {Redirect, Route, Switch} from "react-router";
 import React, {lazy, Suspense} from "react";
 import {DialogsPage, UsersPage, FriendsPage, SearchPage, LoginPage} from './pages'
 import {Preloader} from './ui/atoms/preloader/Preloader'
+import {MusicPage} from './pages/music'
+import {NewsPage} from './pages/news'
 
 
 const ProfilePage = lazy(() => import("./pages/profile").then(({ProfilePage}) => (
@@ -14,6 +16,12 @@ export const Routes = () => {
     <Switch>
       <Route path={'/profile/:userId?'}>
         <ProfilePage/>
+      </Route>
+      <Route path="/news">
+        <NewsPage/>
+      </Route>
+      <Route path="/music">
+        <MusicPage/>
       </Route>
       <Route path="/dialogs">
         <DialogsPage/>

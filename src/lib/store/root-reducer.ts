@@ -4,13 +4,17 @@ import {authReducer} from '../../features/authentication/modules/authorization/r
 import {initReducer} from '../../features/authentication/modules/initialization/reducer'
 import profileReducer from '../../features/profile/modules/profile/reducer'
 import usersReducer from '../../features/users/modules/users/reducer'
+import {musicReducer} from '../../features/music/modules/music/reducer'
+import {newsReducer} from '../../features/news/modules/news/reducer'
 
 
 export const rootReducer = combineReducers({
     profilePage: profileReducer,
     usersPage: usersReducer,
     auth: authReducer,
-    init: initReducer
+    init: initReducer,
+    news: newsReducer,
+    music: musicReducer
 })
 
 

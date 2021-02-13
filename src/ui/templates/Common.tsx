@@ -9,7 +9,11 @@ import {Header} from '../organisms/Header/Header'
 import {UserAuthInfo} from '../../features/authentication/UserAuthInfo'
 
 
-export const CommonTemplate: FC = ({children}) => {
+export type ICommonTemplateProps = {
+    clearMusicSearch?: () => void
+}
+
+export const CommonTemplate: FC<ICommonTemplateProps> = ({children, clearMusicSearch}) => {
     const dispatch = useDispatch()
     const clearPage = (): void => {
         dispatch(usersActions.setCurrentPage(1))
@@ -22,7 +26,8 @@ export const CommonTemplate: FC = ({children}) => {
             </Header>
             <div className={classes.app_wrapper}>
                 <div className={classes.content_wrapper}>
-                    <Navbar clearPage={clearPage}>
+                    <Navbar clearPage={clearPage}
+                            clearMusicSearch={clearMusicSearch}>
                         <Friends clearPage={clearPage}/>
                     </Navbar>
                     <main className={classes.app_content}>

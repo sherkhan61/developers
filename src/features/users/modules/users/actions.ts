@@ -32,12 +32,12 @@ export const usersActions = {
 
 // =====================Thunk Creators====================
 
-export const getUsers = (page: number, pageSize: number, isFriend: boolean = false, term?: string): ThunkType => {
+export const getUsers = (currentPage: number, pageSize: number, isFriend: boolean = false, term?: string): ThunkType => {
     return async (dispatch) => {
         dispatch(usersActions.toggleIsFetching(true))
-        dispatch(usersActions.setCurrentPage(page))
+        dispatch(usersActions.setCurrentPage(currentPage))
 
-        let data = await usersAPI.getUsers(page, pageSize, isFriend, term)
+        let data = await usersAPI.getUsers(currentPage, pageSize, isFriend, term)
         dispatch(usersActions.toggleIsFetching(false))
         dispatch(usersActions.setUsers(data.items))
         dispatch(usersActions.setTotalUsersCount(data.totalCount!))

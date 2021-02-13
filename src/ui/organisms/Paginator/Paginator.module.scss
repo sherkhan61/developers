@@ -7,16 +7,16 @@
   }
 }
 .pageNumber {
-   padding: 5px 10px;
-   font-size: 1.1rem;
+  padding: 5px 10px;
+  font-size: 1.1rem;
   cursor: pointer;
   color: #6d6e71;
- }
+}
 .pageNumber:hover {
   background: #149AC9;
   color: white;
   transition: all 1s;
-  }
+}
 
 .pageNumber.selectedPage {
   font-weight: bold;

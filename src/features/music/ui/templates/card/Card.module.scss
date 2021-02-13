@@ -1,0 +1,26 @@
+.card{
+flex: 0 1 28%;
+  padding: 10px 0;
+
+  img{
+    width: 100%;
+    display: block;
+  }
+  .card_name{
+    font-size: 1.3rem;
+    width: 100%;
+    color: #6d6e71;
+    padding: 20px 0 ;
+    text-align: center;
+    word-break: break-word;
+  }
+  .artist_card_name:hover{
+  color: #27AAE1;
+    transition: all 1s;
+  }
+}
+@media (max-width: 640px) {
+  .card_name{
+    font-size: 1.1rem !important;
+  }
+}

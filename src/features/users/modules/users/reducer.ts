@@ -51,7 +51,7 @@ const usersReducer = (state = initialState, action: ActionsTypes): InitialStateT
         case 'SN/USERS/SET_CURRENT_PAGE':
             return {
                 ...state,
-                currentPage: +action.currentPage
+                currentPage: action.currentPage
             };
         case 'SN/USERS/SET_TOTAL_USERS_COUNT':
             return {
