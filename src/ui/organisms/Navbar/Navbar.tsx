@@ -1,10 +1,9 @@
 import React, {FC} from 'react'
 import styles from './Navbar.module.scss'
 import {NavLink} from 'react-router-dom'
-import {CommonTemplatePropsType} from '../../templates/Common'
 
 
-interface PropsType extends CommonTemplatePropsType {
+interface PropsType {
     clearPage: () => void
 }
 

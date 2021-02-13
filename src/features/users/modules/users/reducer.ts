@@ -27,37 +27,48 @@ const usersReducer = (state = initialState, action: ActionsTypes): InitialStateT
         case 'SN/USERS/FOLLOW':
             return {
                 ...state,
-                users: updateObjectInArray(state.users, action.userId, {followed: true})
-            }
-
+                users: updateObjectInArray(state.users,
+                    action.userId,
+                    {followed: true})
+            };
         case 'SN/USERS/UNFOLLOW':
             return {
                 ...state,
-                users: updateObjectInArray(state.users, action.userId, {followed: false})
-            }
-
+                users: updateObjectInArray(state.users,
+                    action.userId,
+                    {followed: false})
+            };
         case 'SN/USERS/SET_USERS':
-            return {...state, users: action.users}
-
-        case 'SN/USERS/SET_CURRENT_PAGE': {
-            return {...state, currentPage: action.currentPage}
-        }
-        case 'SN/USERS/SET_TOTAL_USERS_COUNT': {
-            return {...state, totalUsersCount: action.count}
-        }
-        case 'SN/USERS/TOGGLE_IS_FETCHING': {
-            return {...state, isFetching: action.isFetching}
-        }
-        case 'SN/USERS/TOGGLE_IS_FOLLOWING_PROGRESS': {
             return {
                 ...state,
-                followingInProgress: action.isFetching
-                    ? [...state.followingInProgress, action.userId]
-                    : state.followingInProgress.filter(id => id != action.userId)
-            }
-        }
+                users: [...action.users]
+            };
+        case 'SN/USERS/SET_FRIENDS':
+            return {
+                ...state,
+                friends: [...action.friends]
+            };
+        case 'SN/USERS/SET_CURRENT_PAGE':
+            return {
+                ...state,
+                currentPage: +action.currentPage
+            };
+        case 'SN/USERS/SET_TOTAL_USERS_COUNT':
+            return {
+                ...state,
+                totalUsersCount: action.count
+            };
+        case 'SN/USERS/TOGGLE_IS_FOLLOWING_PROGRESS':
+            return {
+                ...state,
+                followingInProgress: action.isFetching ?
+                    [...state.followingInProgress, action.userId] :
+                    state.followingInProgress.filter((userId) => action.userId !== userId),
+            };
+
+        default:
+            return state;
     }
-    return state
 }
 
 export default usersReducer

@@ -40,20 +40,22 @@ const profileReducer = (state = initialState, action: ActionsTypes): ProfileStat
                 profile: {...state.profile, photos: action.photos} as ProfileType,
             }
         }
-        case 'SN/TOGGLE_IS_FOLLOWING': {
+        case 'SN/PROFILE/TOGGLE_IS_FOLLOWING': {
             return {
                 ...state,
                 isFollowing: action.isFollowing
             }
         }
-        case 'SN/IS_FOLLOWED': {
+        case 'SN/PROFILE/IS_FOLLOWED': {
             return {
                 ...state,
                 followed: action.isFollowed
             }
         }
+        default:
+            return state;
     }
-    return state
+
 }
 
 

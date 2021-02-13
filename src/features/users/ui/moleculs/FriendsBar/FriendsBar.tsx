@@ -23,6 +23,7 @@ export const FriendsBar: FC<PropsType> = ({clearPage}) => {
     const friends = useSelector((state: RootState) => state.usersPage.friends)
 
     const friendsElements = friends.map((friend) => {
+
         return (
             <div key={friend.id} className={styles.friend}>
                 <Link to={`/profile/${friend.id}`}>
@@ -34,9 +35,9 @@ export const FriendsBar: FC<PropsType> = ({clearPage}) => {
             </div>
         )
     })
+
     return (
         <>
-
             {friends.length === 0 ?
                 <Preloader/> :
                 <aside className={styles.friendsBar}>

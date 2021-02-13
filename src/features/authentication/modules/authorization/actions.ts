@@ -40,10 +40,10 @@ export const getAuth = (isAuth: boolean): ThunkType => async (dispatch) => {
 export const login = (email: string, password: string, rememberMe: boolean, captcha: string): ThunkType => async (dispatch) => {
     let data = await authAPI.login(email, password, rememberMe, captcha)
     if (data.resultCode === 0) {
-        dispatch(getAuth(true))
+        await dispatch(getAuth(true))
     } else {
         if (data.resultCode === 10) {
-            dispatch(getCaptchaUrl())
+           await dispatch(getCaptchaUrl())
         }
         const error = data.messages.length > 0 ?
             data.messages[0] :

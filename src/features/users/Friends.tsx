@@ -8,6 +8,7 @@ export interface IFriendsProps {
 }
 
 export const Friends: FC<IFriendsProps> = ({clearPage}) => {
+
   const isMobile: boolean = document.documentElement.clientWidth <= 860;
 
   const isAuth: boolean = useSelector((state: RootState) => state.auth.isAuth);

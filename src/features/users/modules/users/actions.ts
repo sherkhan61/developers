@@ -9,7 +9,7 @@ export const usersActions = {
     followSuccess: (userId: number) => ({type: 'SN/USERS/FOLLOW', userId} as const),
     unfollowSuccess: (userId: number) => ({type: 'SN/USERS/UNFOLLOW', userId} as const),
     setUsers: (users: Array<UserType>) => ({type: 'SN/USERS/SET_USERS', users} as const),
-    setFriends: (friends: Array<UserType>) => ({type: 'SN/SET_FRIENDS', friends} as const),
+    setFriends: (friends: Array<UserType>) => ({type: 'SN/USERS/SET_FRIENDS', friends} as const),
     setCurrentPage: (currentPage: number) => ({
         type: 'SN/USERS/SET_CURRENT_PAGE',
         currentPage
@@ -51,7 +51,7 @@ const followUnfollowFlow = async (dispatch: Dispatch<ActionsTypes>,
     dispatch(usersActions.toggleIsFollowingProgress(true, userId))
     let response = await apiMethod(userId)
 
-    if (response.resultCode == 0) {
+    if (response.resultCode === 0) {
         dispatch(actionCreator(userId))
     }
     dispatch(usersActions.toggleIsFollowingProgress(false, userId))

@@ -9,11 +9,7 @@ import {Header} from '../organisms/Header/Header'
 import {UserAuthInfo} from '../../features/authentication/UserAuthInfo'
 
 
-export type CommonTemplatePropsType = {
-    clearMusicSearch?: () => void
-}
-
-export const CommonTemplate: FC<CommonTemplatePropsType> = ({children}) => {
+export const CommonTemplate: FC = ({children}) => {
     const dispatch = useDispatch()
     const clearPage = (): void => {
         dispatch(usersActions.setCurrentPage(1))

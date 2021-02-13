@@ -11,8 +11,8 @@ export const profileActions = {
     setUsersProfile: (profile: ProfileType | null) => ({type: 'SN/PROFILE/SET_USERS_PROFILE', profile} as const),
     setStatus: (status: string) => ({type: 'SN/PROFILE/SET_STATUS', status} as const),
     savePhotoSuccess: (photos: PhotosType) => ({type: 'SN/PROFILE/SAVE_PHOTO_SUCCESS', photos} as const),
-    toggleIsFollowing: (isFollowing: boolean) => ({type: 'SN/TOGGLE_IS_FOLLOWING', isFollowing} as const),
-    isFollowed: (isFollowed: boolean) => ({type: 'SN/IS_FOLLOWED', isFollowed} as const)
+    toggleIsFollowing: (isFollowing: boolean) => ({type: 'SN/PROFILE/TOGGLE_IS_FOLLOWING', isFollowing} as const),
+    isFollowed: (isFollowed: boolean) => ({type: 'SN/PROFILE/IS_FOLLOWED', isFollowed} as const)
 }
 
 
@@ -56,7 +56,7 @@ export const saveProfile = (profile: ProfileType) => async (dispatch: DispatchTy
 
 export const followUser = (): ThunkType => async (dispatch, getState) => {
     dispatch(profileActions.toggleIsFollowing(true))
-    let data = await usersAPI.follow(getState().profilePage.profile!.userId!)
+    await usersAPI.follow(getState().profilePage.profile!.userId!)
     dispatch(profileActions.isFollowed(true))
     dispatch(profileActions.toggleIsFollowing(false))
     dispatch(getFriendsDemo(6, 1))
@@ -64,7 +64,7 @@ export const followUser = (): ThunkType => async (dispatch, getState) => {
 
 export const unFollowUser = (): ThunkType => async (dispatch, getState) => {
     dispatch(profileActions.toggleIsFollowing(true))
-    let data = await usersAPI.unfollow(getState().profilePage.profile!.userId!)
+    await usersAPI.unfollow(getState().profilePage.profile!.userId!)
     dispatch(profileActions.isFollowed(false))
     dispatch(profileActions.toggleIsFollowing(false))
     dispatch(getFriendsDemo(6, 1))

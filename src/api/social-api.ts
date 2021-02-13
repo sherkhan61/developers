@@ -90,10 +90,6 @@ export const authAPI = {
 
 
 
-type SavePhotoResponseType = {
-    photos: PhotosType
-}
-
 export const profileAPI = {
     getProfile(userId: number) {
         return instance.get<ProfileType>(`profile/` + userId).then(res => res.data)
@@ -136,9 +132,9 @@ export const securityAPI = {
 
 export const usersAPI = {
     getUsers(pageSize: number, currentPage: number,
-             isFriend: boolean, term: string = "") {
-        return instance.get<GetsItemsType>(`users?count=${pageSize}&page=${currentPage}&friend=${isFriend}&term=${term}`)
-            .then(res => res.data)
+             isFriend: boolean, term: string = ""): Promise<GetsItemsType> {
+        return instance.get(`users?count=${pageSize}&page=${currentPage}&friend=${isFriend}&term=${term}`)
+            .then((response) => response.data)
     },
     follow(userId: number) {
         return instance.post<APIResponseType>(`follow/${userId}`).then(res => res.data)
