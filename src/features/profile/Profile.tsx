@@ -15,9 +15,9 @@ type PathParamsType = {
 
 
 const Profile: React.FC = () => {
-
+    debugger
     useAuthRedirect();
-
+    debugger
     const selectedId = useParams<PathParamsType>().userId;
     const dispatch = useDispatch();
     const {profile, authUserId} = useSelector((state: RootState) => {
@@ -30,7 +30,7 @@ const Profile: React.FC = () => {
     const isAuth = useSelector((state: RootState) => state.auth.isAuth);
 
     let userId = selectedId || authUserId;
-
+    debugger
     useEffect(() => {
         if (isAuth) {
             dispatch(getProfile(+userId!));
@@ -40,7 +40,7 @@ const Profile: React.FC = () => {
             dispatch(profileActions.setUsersProfile(null))
         })
     }, [selectedId, dispatch, isAuth, userId]);
-
+    debugger
     return (
         <>
             {!profile ?

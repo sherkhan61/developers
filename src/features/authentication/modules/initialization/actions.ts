@@ -13,7 +13,9 @@ export const initActions = {
 
 
 export const initializeApp = () => (dispatch: any) => {
+    debugger
     return dispatch(getAuth(true)).then(() => {
         dispatch(initActions.initializedSuccess())
     });
+    debugger
 };

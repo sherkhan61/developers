@@ -19,7 +19,7 @@ type PropsType = {
   isAuth: boolean
 }
 export const ProfileInfo:FC<PropsType> = ({userId, profile, authUserId, myAva_img, isAuth}) => {
-
+  debugger
   const dispatch = useDispatch();
 
   const isOwner:boolean = userId === authUserId;

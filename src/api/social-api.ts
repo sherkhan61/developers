@@ -1,8 +1,6 @@
 import axios, {AxiosResponse} from 'axios'
 
 
-
-
 export type APIResponseType<T = {}> = {
     resultCode: number,
     messages: Array<any> | string,
@@ -65,9 +63,6 @@ export const instance = axios.create({
 })
 
 
-
-
-
 type MeResponseDataType = {
     id: number, email: string, login: string
 }
@@ -75,11 +70,20 @@ type LoginResponseDataType = {
     userId: number
 }
 export const authAPI = {
-    me() {
-        return instance.get<APIResponseType<MeResponseDataType>>(`auth/me`).then(res => res.data)
+    me(): Promise<MeResponseDataType> {
+        return instance
+            .get(`/auth/me`)
+            .then((response) => {
+                if (response.data.resultCode === 0) return response.data.data
+            })
     },
     login(email: string, password: string, rememberMe = false, captcha: null | string = null) {
-        return instance.post<APIResponseType<LoginResponseDataType>>(`auth/login`, {email, password, rememberMe, captcha})
+        return instance.post<APIResponseType<LoginResponseDataType>>(`auth/login`, {
+            email,
+            password,
+            rememberMe,
+            captcha
+        })
             .then(res => res.data)
     },
     logout() {
@@ -87,7 +91,6 @@ export const authAPI = {
     },
 
 }
-
 
 
 export const profileAPI = {
@@ -100,23 +103,22 @@ export const profileAPI = {
     updateStatus(status: string) {
         return instance.put<APIResponseType>('profile/status', {status: status}).then(res => res.data)
     },
-    savePhoto(photoFile: File): Promise<APIResponseType<{photos:PhotosType}> | never> {
-        const formData = new FormData();
-        formData.append("newPhoto", photoFile);
+    savePhoto(photoFile: File): Promise<APIResponseType<{ photos: PhotosType }> | never> {
+        const formData = new FormData()
+        formData.append('newPhoto', photoFile)
         return instance.put('/profile/photo', formData)
             .then((response) => {
                 if (response.data.resultCode === 0) {
-                    return response.data;
+                    return response.data
                 }
-            });
+            })
     },
     saveProfile(profile: ProfileType): Promise<AxiosResponse<APIResponseType>> {
         return instance.put('/profile/', profile).then((response) => {
-            return response;
+            return response
         })
     }
 }
-
 
 
 type GetCaptchaUrlResponseType = {
@@ -132,7 +134,7 @@ export const securityAPI = {
 
 export const usersAPI = {
     getUsers(pageSize: number, currentPage: number,
-             isFriend: boolean, term: string = ""): Promise<GetsItemsType> {
+             isFriend: boolean, term: string = ''): Promise<GetsItemsType> {
         return instance.get(`users?count=${pageSize}&page=${currentPage}&friend=${isFriend}&term=${term}`)
             .then((response) => response.data)
     },
@@ -143,7 +145,7 @@ export const usersAPI = {
         return instance.delete(`follow/${userId}`).then(res => res.data) as Promise<APIResponseType>
     },
     isFollowed(userId: number) {
-        return instance.get(`follow/${userId}`).then(res => res.data) as Promise<boolean>;
+        return instance.get(`follow/${userId}`).then(res => res.data) as Promise<boolean>
     }
 }
 
