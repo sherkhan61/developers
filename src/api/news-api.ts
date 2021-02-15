@@ -37,7 +37,7 @@ export const newsApi = {
             type = "top-headlines", country = "country=us",
             category = "&category=general", query = ""
           }: INewsParams ): Promise<Array<IArticle> | void> {
-    return instance.get(`/${type}?${country}${category}${query}&apiKey=9f6b4297388249849db6c199fd357b24`)
+    return instance.get(`/${type}?${country}${category}${query}&apiKey=b5e4fea93d13478e94f4c10623d1cf4b`)
         .then((response: AxiosResponse<INewsData>) => {
           if (response.data.status === "ok") {
             return response.data.articles
