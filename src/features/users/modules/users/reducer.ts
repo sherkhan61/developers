@@ -1,5 +1,5 @@
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
-import {UserType} from '../../../../api/social-api'
+import {UserType} from '../../../../api/socialApi'
 import {usersActions} from './actions'
 import {updateObjectInArray} from '../../../../utils/obj-helpers'
 

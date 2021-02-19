@@ -1,4 +1,4 @@
-import {IMusicCategory, IMusicResponse, ITracks, musicApi} from '../../../../api/music-api'
+import {IMusicCategory, IMusicResponse, ITracks, musicApi} from '../../../../api/musicApi'
 import {DispatchType} from '../../../../lib/store/root-reducer'
 
 

@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from "react";
-import {IAlbum} from '../../../../api/music-api'
+import {IAlbum} from '../../../../api/musicApi'
 import {Card} from '../templates/card/Card'
 import {Cards} from '../templates/cards/Cards'
 

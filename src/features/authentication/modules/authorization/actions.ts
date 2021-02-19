@@ -4,7 +4,7 @@ import {
     profileAPI,
     ProfileType,
     securityAPI
-} from '../../../../api/social-api'
+} from '../../../../api/socialApi'
 
 
 // ==========Action Creators======================

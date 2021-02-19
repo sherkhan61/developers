@@ -1,0 +1,82 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@music": [
+        "features/music"
+      ],
+      "@music/*": [
+        "features/music/*"
+      ],
+      "@ui": [
+        "ui"
+      ],
+      "@ui/*": [
+        "ui/*"
+      ],
+      "@news": [
+        "features/news"
+      ],
+      "@news/*": [
+        "features/news/*"
+      ],
+      "@profile": [
+        "features/profile"
+      ],
+      "@profile/*": [
+        "features/profile/*"
+      ],
+      "@users": [
+        "features/users"
+      ],
+      "@users/*": [
+        "features/users/*"
+      ],
+      "@auth": [
+        "features/authentication"
+      ],
+      "@auth/*": [
+        "features/authentication/*"
+      ],
+      "@dialogs": [
+        "features/dialogs"
+      ],
+      "@dialogs/*": [
+        "features/dialogs/*"
+      ],
+      "@images": [
+        "ui/assets/images"
+      ],
+      "@images/*": [
+        "ui/assets/images/*"
+      ],
+      "@icons": [
+        "ui/assets/icons"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
+      "@socialAPI": [
+        "api/socialAPI.ts"
+      ],
+      "@utils": [
+        "utils"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@pages": [
+        "pages"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@store": [
+        "lib/store"
+      ],
+      "@store/*": [
+        "lib/store/*"
+      ]
+    }
+  }
+}

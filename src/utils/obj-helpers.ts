@@ -1,4 +1,4 @@
-import {UserType} from '../api/social-api'
+import {UserType} from '../api/socialApi'
 
 
 export const updateObjectInArray = (items: Array<UserType>,

@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {IPlayLists} from '../../../../api/music-api'
+import {IPlayLists} from '../../../../api/musicApi'
 import {Card} from '../templates/card/Card'
 import {Cards} from '../templates/cards/Cards'
 

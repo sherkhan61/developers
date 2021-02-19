@@ -1,6 +1,6 @@
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {profileActions} from './actions'
-import {ProfileType} from '../../../../api/social-api'
+import {ProfileType} from '../../../../api/socialApi'
 
 
 export type ActionsTypes = InferActionsTypes<typeof profileActions>

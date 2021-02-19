@@ -3,7 +3,7 @@ import {useForm} from 'react-hook-form'
 import {useDispatch} from 'react-redux'
 import classes from './ProfileForm.module.scss'
 import {saveProfile} from '../../../modules/profile/actions'
-import {ProfileType} from '../../../../../api/social-api'
+import {ProfileType} from '../../../../../api/socialApi'
 
 type PropsType = {
     profile: ProfileType

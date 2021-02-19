@@ -1,4 +1,4 @@
-import {IMusicCategory, IMusicResponse, ITracks} from '../../../../api/music-api'
+import {IMusicCategory, IMusicResponse, ITracks} from '../../../../api/musicApi'
 import {InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {musicActions} from './actions'
 

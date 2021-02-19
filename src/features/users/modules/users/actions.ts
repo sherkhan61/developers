@@ -1,5 +1,5 @@
 import {Dispatch} from 'redux'
-import {APIResponseType, usersAPI, UserType} from '../../../../api/social-api'
+import {APIResponseType, usersAPI, UserType} from '../../../../api/socialApi'
 import {ActionsTypes, ThunkType} from './reducer'
 
 

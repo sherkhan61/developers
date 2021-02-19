@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {ITracks} from '../../../../api/music-api'
+import {ITracks} from '../../../../api/musicApi'
 import {Tracks} from './Tracks/Tracks'
 import {Arrow} from '../../../../ui/atoms/Arrow/Arrow'
 import {musicActions} from '../../modules/music/actions'

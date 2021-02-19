@@ -6,7 +6,7 @@ import {followUser, isUserFollowed, savePhoto, unFollowUser} from '../../../modu
 import {ProfileStatus} from '../../atoms/ProfileStatus/ProfileStatus'
 import {Link} from 'react-router-dom'
 import {ProfileDescription} from '../../molecules/ProfileDescription/ProfileDescription'
-import {ProfileType} from '../../../../../api/social-api'
+import {ProfileType} from '../../../../../api/socialApi'
 
 
 

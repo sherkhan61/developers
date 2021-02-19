@@ -1,6 +1,6 @@
 import {BaseThunkType, InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {actions} from './actions'
-import {ProfileType} from '../../../../api/social-api'
+import {ProfileType} from '../../../../api/socialApi'
 
 
 export type InitialStateType = {

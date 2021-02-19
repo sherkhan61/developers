@@ -1,5 +1,5 @@
 import classes from '../../Music.module.scss'
-import {IPodcasts} from '../../../../api/music-api'
+import {IPodcasts} from '../../../../api/musicApi'
 import React, {FC, ReactNode} from 'react'
 import {Card} from '../templates/card/Card'
 import {Cards} from '../templates/cards/Cards'

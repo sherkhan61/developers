@@ -1,4 +1,4 @@
-import {IArticle} from '../../../../api/news-api'
+import {IArticle} from '../../../../api/newsApi'
 import {InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {newsActions} from './actions'
 

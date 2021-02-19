@@ -1,6 +1,6 @@
 import styles from './Tracks.module.scss'
 import React, {FC, PropsWithChildren, useEffect, useReducer, useRef} from 'react'
-import {ITracks} from '../../../../../api/music-api'
+import {ITracks} from '../../../../../api/musicApi'
 import {initialState, playerReducer} from '../../../modules/player/reducer'
 import {playerActions} from '../../../modules/player/actions'
 import {converter} from '../../../utils'

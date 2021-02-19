@@ -1,4 +1,4 @@
-import {IArticle, INewsParams, newsApi} from '../../../../api/news-api'
+import {IArticle, INewsParams, newsApi} from '../../../../api/newsApi'
 import {DispatchType} from '../../../../lib/store/root-reducer'
 
 

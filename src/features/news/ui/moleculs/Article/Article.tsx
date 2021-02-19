@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import classes from "./Article.module.scss"
 import mockImg from "../../assets/categories/news.jpg"
-import {IArticle} from '../../../../../api/news-api'
+import {IArticle} from '../../../../../api/newsApi'
 
 
 
