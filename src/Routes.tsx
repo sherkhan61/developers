@@ -1,13 +1,19 @@
 import {Redirect, Route, Switch} from "react-router";
 import React, {lazy, Suspense} from "react";
-import {DialogsPage, UsersPage, FriendsPage, SearchPage, LoginPage} from './pages'
-import {Preloader} from './ui/atoms/preloader/Preloader'
-import {MusicPage} from './pages/music'
-import {NewsPage} from './pages/news'
+import {DialogsPage, UsersPage, FriendsPage, SearchPage, LoginPage} from '@pages'
+import {Preloader} from '@ui/atoms/preloader/Preloader'
 
 
-const ProfilePage = lazy(() => import("./pages/profile").then(({ProfilePage}) => (
+const ProfilePage = lazy(() => import("@pages/profile").then(({ProfilePage}) => (
   {default: ProfilePage}
+)));
+
+const NewsPage = lazy(() => import("@pages/news").then(({NewsPage}) => (
+  {default: NewsPage}
+)));
+
+const MusicPage = lazy(() => import("@pages/music").then(({MusicPage}) => (
+  {default: MusicPage}
 )));
 
 export const Routes = () => {

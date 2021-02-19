@@ -2,7 +2,7 @@ import React, {FC, useState} from "react";
 import classes from "./ProfileDescription.module.scss"
 import {ProfileForm} from '../ProfileForm/ProfileForm'
 import {Contacts} from '../Contacts/Contacts'
-import {ProfileType} from '../../../../../api/socialApi'
+import {ProfileType} from '@api/socialApi'
 
 
 type PropsType = {

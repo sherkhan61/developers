@@ -3,10 +3,9 @@ import './App.module.scss'
 import {HashRouter} from 'react-router-dom'
 import {connect, ConnectedProps} from 'react-redux'
 import {Routes} from './Routes'
-//import {DispatchType, RootState} from './lib/store/root-reducer'
 import {DispatchType, RootState} from '@store/root-reducer'
-import {initializeApp} from './features/authentication/modules/initialization/actions'
-import {Preloader} from './ui/atoms/preloader/Preloader'
+import {initializeApp} from '@auth/modules/initialization/actions'
+import {Preloader} from '@ui/atoms/preloader/Preloader'
 
 
 

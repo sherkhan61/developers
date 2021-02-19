@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react'
-import {useAuthRedirect} from '../authentication/hooks/useAuthRedirect'
+import {useAuthRedirect} from '@auth/hooks/useAuthRedirect'
 import {useParams} from 'react-router'
 import {shallowEqual, useDispatch, useSelector} from 'react-redux'
-import {RootState} from '../../lib/store/root-reducer'
-import {getProfile, getStatus, profileActions} from './modules/profile/actions'
-import avatarUndefined from '../../ui/assets/images/avatar-undefined.jpg'
-import {ProfileInfo} from './ui/organisms/ProfileInfo/ProfileInfo'
-import {Preloader} from '../../ui/atoms/preloader/Preloader'
+import {RootState} from '@store/root-reducer'
+import {getProfile, getStatus, profileActions} from '@profile/modules/profile/actions'
+import avatarUndefined from '@ui/assets/images/avatar-undefined.jpg'
+import {ProfileInfo} from '@profile/ui/organisms/ProfileInfo/ProfileInfo'
+import {Preloader} from '@ui/atoms/preloader/Preloader'
 
 
 type PathParamsType = {

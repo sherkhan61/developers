@@ -1,6 +1,6 @@
 import React, {FC} from "react";
-import {CommonTemplate} from '../../ui/templates/Common'
-import Profile from '../../features/profile/Profile'
+import {CommonTemplate} from '@ui/templates/Common'
+import Profile from '@profile/Profile'
 
 
 export const ProfilePage: FC = () => {

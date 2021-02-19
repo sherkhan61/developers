@@ -18,7 +18,6 @@ module.exports = {
             '@music' : path.resolve(__dirname, 'src/features/music'),
             '@auth' : path.resolve(__dirname, 'src/features/authentication'),
             '@ui' : path.resolve(__dirname, 'src/ui'),
-            '@images' : path.resolve(__dirname, 'src/ui/images')
         }
     }
 }

@@ -1,5 +1,5 @@
 import {useHistory} from "react-router";
-import {RootState} from '../../../lib/store/root-reducer'
+import {RootState} from '@store/root-reducer'
 import {useSelector} from 'react-redux'
 
 
