@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import classes from './Followbtn.module.scss'
 import {useDispatch} from 'react-redux'
-import {followThunk, unfollowThunk} from '../../../modules/users/actions'
+import {followThunk, unfollowThunk} from '@users/modules/users/actions'
 
 interface IFollowBtnProps {
   followed: boolean

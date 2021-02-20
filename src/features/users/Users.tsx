@@ -10,9 +10,9 @@ import {
     getPageSize,
     getTotalUsersCount,
     getUsersPage
-} from './modules/users/selectors'
+} from '@users/modules/users/selectors'
 import {getUsers, search, usersActions} from '@users/modules/users/actions'
-import {User} from './ui/organisms/User/User'
+import {User} from '@users/ui/organisms/User/User'
 import {Paginator} from '@ui/organisms/Paginator/Paginator'
 import {Preloader} from '@ui/atoms/preloader/Preloader'
 
