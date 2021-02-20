@@ -1,10 +1,10 @@
 import React, {FC, useEffect} from 'react'
 import classes from './News.module.scss'
 import {useDispatch} from 'react-redux'
-import {getNews} from './modules/news/actions'
-import {Articles} from './ui/Organisms/Articles'
-import {Categories} from './ui/moleculs/Categories/Categories'
-import {Search} from './ui/moleculs/Search/Search'
+import {getNews} from '@news/modules/news/actions'
+import {Articles} from '@news/ui/Organisms/Articles'
+import {Categories} from '@news/ui/moleculs/Categories/Categories'
+import {Search} from '@news/ui/moleculs/Search/Search'
 
 
 export const News: FC = () => {

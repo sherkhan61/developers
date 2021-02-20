@@ -1,7 +1,7 @@
 import styles from './Categories.module.scss'
 import React, {FC} from 'react'
-import {getNews} from '../../../modules/news/actions'
-import {DispatchType} from '../../../../../lib/store/root-reducer'
+import {getNews} from '@news/modules/news/actions'
+import {DispatchType} from '@store/root-reducer'
 
 
 

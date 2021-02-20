@@ -1,7 +1,7 @@
 import React, {FC, FormEvent} from 'react'
 import classes from './Search.module.scss'
-import {DispatchType} from '../../../../../lib/store/root-reducer'
-import {getNews} from '../../../modules/news/actions'
+import {DispatchType} from '@store/root-reducer'
+import {getNews} from '@news/modules/news/actions'
 
 
 
