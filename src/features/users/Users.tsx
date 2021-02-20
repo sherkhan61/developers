@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react'
 import {shallowEqual, useDispatch, useSelector} from 'react-redux'
 import classes from './Users.module.scss'
 import {useLocation, useParams} from 'react-router'
-import {RootState} from '../../lib/store/root-reducer'
+import {RootState} from '@store/root-reducer'
 import {
     getCurrentPage,
     getFollowingInProgress,
@@ -11,10 +11,10 @@ import {
     getTotalUsersCount,
     getUsersPage
 } from './modules/users/selectors'
-import {getUsers, search, usersActions} from './modules/users/actions'
+import {getUsers, search, usersActions} from '@users/modules/users/actions'
 import {User} from './ui/organisms/User/User'
-import {Paginator} from '../../ui/organisms/Paginator/Paginator'
-import {Preloader} from '../../ui/atoms/preloader/Preloader'
+import {Paginator} from '@ui/organisms/Paginator/Paginator'
+import {Preloader} from '@ui/atoms/preloader/Preloader'
 
 
 let isEmpty = (arr: Array<any>) => {

@@ -1,12 +1,12 @@
 import React, {FC} from 'react'
 import classes from './Common.module.scss'
 import {useDispatch} from 'react-redux'
-import {usersActions} from '../../features/users/modules/users/actions'
-import {Friends, Search} from '../../features/users'
-import {Navbar} from '../organisms/Navbar/Navbar'
-import {Footer} from '../organisms/Footer/Footer'
-import {Header} from '../organisms/Header/Header'
-import {UserAuthInfo} from '../../features/authentication/UserAuthInfo'
+import {usersActions} from '@users/modules/users/actions'
+import {Friends, Search} from '@users'
+import {Navbar} from '@ui/organisms/Navbar/Navbar'
+import {Footer} from '@ui/organisms/Footer/Footer'
+import {Header} from '@ui/organisms/Header/Header'
+import {UserAuthInfo} from '@auth/UserAuthInfo'
 
 
 export type ICommonTemplateProps = {

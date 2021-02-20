@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import {useDispatch} from "react-redux";
 import styles from "./Logout.module.scss"
-import {logout} from '../../../modules/authorization/actions'
+import {logout} from '@auth/modules/authorization/actions'
 
 interface ILogoutProps {
   isMobile: boolean

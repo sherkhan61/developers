@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import styles from "./SignIn.module.scss"
 import classes
-  from "../organisms/UserAutnInfoBar/UserAuthInfoBar.module.scss";
+  from "@auth/ui/organisms/UserAutnInfoBar/UserAuthInfoBar.module.scss";
 import {NavLink} from "react-router-dom";
 
 

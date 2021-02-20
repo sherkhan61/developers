@@ -2,7 +2,8 @@ import React from 'react'
 import {useForm} from 'react-hook-form'
 import {useDispatch} from 'react-redux'
 import classes from './LoginForm.module.scss'
-import {login} from '../../../modules/authorization/actions'
+import {login} from '@auth/modules/authorization/actions'
+
 
 type ILoginFormProps = {
     captchaUrl: string | null

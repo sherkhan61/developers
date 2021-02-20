@@ -1,8 +1,8 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
-import {RootState} from '../../lib/store/root-reducer'
+import {RootState} from '@store/root-reducer'
 import {Redirect} from 'react-router-dom'
-import {LoginForm} from './ui/organisms/LoginForm/LoginForm'
+import {LoginForm} from '@auth/ui/organisms/LoginForm/LoginForm'
 
 
 export const Login: React.FC = () => {

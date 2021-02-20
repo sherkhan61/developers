@@ -1,7 +1,7 @@
 import React, {FC, useCallback, useRef, useState} from 'react'
 import dropClass from './ui/molecules/Dropdown/Dropdown.module.scss'
 import {useSelector} from 'react-redux'
-import {RootState} from '../../lib/store/root-reducer'
+import {RootState} from '@store/root-reducer'
 import {UserAuthInfoBar} from './ui/organisms/UserAutnInfoBar/UserAuthInfoBar'
 import {SignIn} from './ui/atoms/SIgnIn'
 import {Dropdown} from './ui/molecules/Dropdown/Dropdown'

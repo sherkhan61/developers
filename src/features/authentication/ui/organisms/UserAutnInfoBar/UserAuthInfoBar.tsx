@@ -1,8 +1,8 @@
 import classes from "./UserAuthInfoBar.module.scss";
 import React, {ReactNode} from "react";
 import {shallowEqual, useSelector} from "react-redux";
-import {RootState} from '../../../../../lib/store/root-reducer'
-import {Logout} from '../../atoms/Logout/Logout'
+import {RootState} from '@store/root-reducer'
+import {Logout} from '@auth/ui/atoms/Logout/Logout'
 
 interface IUserAuthInfoBarProps {
   onDropdown: () => void
