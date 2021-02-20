@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 import {useForm} from 'react-hook-form'
 import styles from './Search.module.scss'
-import {DispatchType} from '../../../../../lib/store/root-reducer'
-import {search} from '../../../modules/music/actions'
+import {DispatchType} from '@store/root-reducer'
+import {search} from '@music/modules/music/actions'
 
 interface ISearchProps {
   dispatch: DispatchType

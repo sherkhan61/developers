@@ -1,11 +1,11 @@
 import React, {FC, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import styles from "./Music.module.scss"
-import {RootState} from '../../lib/store/root-reducer'
-import {getMusicChart, musicActions} from './modules/music/actions'
-import {Chart} from './ui/organisms/Chart'
-import {Search} from './ui/organisms/Search/Search'
-import {SearchResults} from './ui/organisms/SearchResults'
+import {RootState} from '@store/root-reducer'
+import {getMusicChart, musicActions} from '@music/modules/music/actions'
+import {Chart} from '@music/ui/organisms/Chart'
+import {Search} from '@music/ui/organisms/Search/Search'
+import {SearchResults} from '@music/ui/organisms/SearchResults'
 
 
 export const Music: FC = () => {

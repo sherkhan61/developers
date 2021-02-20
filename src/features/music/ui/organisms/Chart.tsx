@@ -1,12 +1,12 @@
-import classes from "../../Music.module.scss";
+import classes from "@music/Music.module.scss";
 import React, {FC} from "react";
 import {shallowEqual, useSelector} from "react-redux";
-import {RootState} from '../../../../lib/store/root-reducer'
+import {RootState} from '@store/root-reducer'
 import {Tracks} from './Tracks/Tracks'
-import {Artists} from '../moleculs/Artists'
-import {Albums} from '../moleculs/Albums'
-import {Podcasts} from '../moleculs/Podcasts'
-import {Playlists} from '../moleculs/Playlists'
+import {Artists} from '@music/ui/moleculs/Artists'
+import {Albums} from '@music/ui/moleculs/Albums'
+import {Podcasts} from '@music/ui/moleculs/Podcasts'
+import {Playlists} from '@music/ui/moleculs/Playlists'
 
 
 export const Chart: FC = () => {

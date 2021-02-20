@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 import {useDispatch} from 'react-redux'
-import {musicActions} from '../../features/music/modules/music/actions'
-import {CommonTemplate} from '../../ui/templates/Common'
-import {Music} from '../../features/music/Music'
+import {musicActions} from '@music/modules/music/actions'
+import {CommonTemplate} from '@ui/templates/Common'
+import {Music} from '@music/Music'
 
 
 export const MusicPage: FC = () => {
