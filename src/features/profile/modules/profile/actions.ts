@@ -1,7 +1,7 @@
 import {ThunkType} from './reducer'
-import {PhotosType, profileAPI, ProfileType, usersAPI} from '../../../../api/socialApi'
-import {getFriendsDemo} from '../../../users/modules/users/actions'
-import {DispatchType, RootState} from '../../../../lib/store/root-reducer'
+import {PhotosType, profileAPI, ProfileType, usersAPI} from '@api/socialApi'
+import {getFriendsDemo} from '@users/modules/users/actions'
+import {DispatchType, RootState} from '@store/root-reducer'
 
 
 // ==========Action Creators======================
