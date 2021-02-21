@@ -1,28 +1,34 @@
-import React, {useEffect, useState} from 'react'
-import Message from '@dialogs/Message'
-import {DialogsMessageType} from '@dialogs/Dialogs'
+import React, {useEffect, useRef, useState} from 'react'
+import Message from '@chat/Message'
+import {useSelector} from 'react-redux'
+import {RootState} from '@store/root-reducer'
 
 
-const Messages: React.FC<{wsChannel: WebSocket | null}> = ({wsChannel}) => {
-    const [messages, setMessages] = useState<DialogsMessageType[]>([])
+export const Messages: React.FC<{}> = ({}) => {
+    const messages = useSelector((state: RootState) => state.chat.messages)
+    const messagesAnchorRef = useRef<HTMLDivElement>(null)
+    const [isAutoScroll, setIsAutoScroll] = useState(true)
+
+    const scrollHandler = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
+        const element = e.currentTarget
+        if (Math.abs((element.scrollHeight - element.scrollTop) - element.clientHeight) < 300) {
+            !isAutoScroll && setIsAutoScroll(true)
+        } else {
+            isAutoScroll && setIsAutoScroll(false)
+        }
+    }
 
     useEffect(() => {
-        let messageHandler = (e: MessageEvent) => {
-            let newMessages = JSON.parse(e.data)
-            setMessages(() => [...messages, ...newMessages])
+        if (isAutoScroll) {
+            messagesAnchorRef.current?.scrollIntoView({behavior: 'smooth'})
         }
-        wsChannel?.addEventListener('message', messageHandler)
-
-        return () => {
-            wsChannel?.removeEventListener('message', messageHandler)
-        }
-    }, [wsChannel, messages])
+    }, [messages])
 
     return (
-        <div style={{ height: '300px', overflow: 'auto' }}>
-            {messages.map((m, index) => <Message key={index} message={m}/>)}
+        <div style={{height: '400px', overflowY: 'auto'}} onScroll={scrollHandler}>
+            {messages.map((m, index) => <Message key={m.id} message={m}/>)}
+            <div ref={messagesAnchorRef}></div>
         </div>
     )
 }
 
-export default Messages

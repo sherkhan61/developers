@@ -35,6 +35,14 @@ export const Navbar: FC<PropsType> = ({children, clearPage, clearMusicSearch}) =
                         </NavLink>
                     </li>
 
+                    <li className={styles.dialogs_link}>
+                        <NavLink to="/chat" activeClassName={styles.active}>
+                            <i className="fa fa-comments-o"/>
+                            <strong>Chat</strong>
+                            <small>your chat</small>
+                        </NavLink>
+                    </li>
+
                     <li>
                         <NavLink to="/news" activeClassName={styles.active}>
                             <i className="fa fa-globe"/>

@@ -1,11 +1,8 @@
 import React, {ChangeEvent, Dispatch, SyntheticEvent, useEffect, useRef} from 'react'
 import styles from './Player.module.scss'
-import {ActionsTypes, PlayerStateType} from '../../../modules/player/reducer'
-import {DispatchType} from '../../../../../lib/store/root-reducer'
-import {playerActions} from '../../../modules/player/actions'
-import {calculateProgress, converter} from '../../../utils'
-
-
+import {ActionsTypes, PlayerStateType} from '@music/modules/player/reducer'
+import {playerActions} from '@music/modules/player/actions'
+import {calculateProgress, converter} from '@music/utils'
 
 
 interface IPlayerProps {

@@ -1,16 +1,18 @@
 import {Action, AnyAction, combineReducers} from 'redux'
 import {ThunkAction, ThunkDispatch} from 'redux-thunk'
-import {authReducer} from '../../features/authentication/modules/authorization/reducer'
-import {initReducer} from '../../features/authentication/modules/initialization/reducer'
-import profileReducer from '../../features/profile/modules/profile/reducer'
-import usersReducer from '../../features/users/modules/users/reducer'
-import {musicReducer} from '../../features/music/modules/music/reducer'
-import {newsReducer} from '../../features/news/modules/news/reducer'
+import profileReducer from '@profile/modules/profile/reducer'
+import usersReducer from '@users/modules/users/reducer'
+import chatReducer from '@chat/modules/reducer'
+import {authReducer} from '@auth/modules/authorization/reducer'
+import {initReducer} from '@auth/modules/initialization/reducer'
+import {newsReducer} from '@news/modules/news/reducer'
+import {musicReducer} from '@music/modules/music/reducer'
 
 
 export const rootReducer = combineReducers({
     profilePage: profileReducer,
     usersPage: usersReducer,
+    chat: chatReducer,
     auth: authReducer,
     init: initReducer,
     news: newsReducer,

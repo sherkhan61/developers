@@ -38,17 +38,11 @@
       "@auth/*": [
         "features/authentication/*"
       ],
-      "@dialogs": [
-        "features/dialogs"
+      "@chat": [
+        "features/chat"
       ],
-      "@dialogs/*": [
-        "features/dialogs/*"
-      ],
-      "@images": [
-        "ui/assets/images"
-      ],
-      "@images/*": [
-        "ui/assets/images/*"
+      "@chat/*": [
+        "features/chat/*"
       ],
       "@icons": [
         "ui/assets/icons"

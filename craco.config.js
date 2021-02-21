@@ -13,7 +13,7 @@ module.exports = {
             '@utils' : path.resolve(__dirname, 'src/utils'),
             '@profile' : path.resolve(__dirname, 'src/features/profile'),
             '@users' : path.resolve(__dirname, 'src/features/users'),
-            '@dialogs' : path.resolve(__dirname, 'src/features/dialogs'),
+            '@chat' : path.resolve(__dirname, 'src/features/chat'),
             '@news' : path.resolve(__dirname, 'src/features/news'),
             '@music' : path.resolve(__dirname, 'src/features/music'),
             '@auth' : path.resolve(__dirname, 'src/features/authentication'),

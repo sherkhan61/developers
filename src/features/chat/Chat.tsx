@@ -1,6 +1,11 @@
-import React, {useEffect, useState} from 'react'
-import Messages from '@dialogs/Messages'
-import AddMessagesForm from '@dialogs/AddMessagesForm'
+import React, {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {RootState} from '@store/root-reducer'
+import {startMessagesListening, stopMessagesListening} from '@chat/modules/actions'
+import {Messages} from '@chat/Messages'
+import {AddMessagesForm} from '@chat/AddMessagesForm'
+
+
 
 
 export type DialogsMessageType = {
@@ -10,40 +15,28 @@ export type DialogsMessageType = {
     userName: string
 }
 
-const Dialogs: React.FC = () => {
-    const [wsChannel, setWsChannel] = useState<WebSocket | null>(null)
+const Chat: React.FC = () => {
+    const dispatch = useDispatch()
+
+
+    const status = useSelector((state: RootState) => state.chat.status)
 
     useEffect(() => {
-        let ws: WebSocket
-        let closeHandler = () => {
-            console.log('CLOSE WS')
-            setTimeout(createChannel, 3000)
-        }
-
-        function createChannel() {
-            ws?.removeEventListener('close', closeHandler)
-            ws?.close()
-
-            ws = new WebSocket('wss://social-network.samuraijs.com/handlers/ChatHandler.ashx')
-            ws.addEventListener('close', closeHandler)
-            setWsChannel(ws)
-        }
-        createChannel()
-
+        dispatch(startMessagesListening())
         return () => {
-            ws.removeEventListener('close', closeHandler)
-            ws.close()
+            dispatch(stopMessagesListening())
         }
-
     }, [])
-
 
     return (
         <div>
-            <Messages wsChannel={wsChannel}/>
-            <AddMessagesForm wsChannel={wsChannel}/>
+            {status === 'error' && <div>Some error occured. Please refresh the page</div>}
+            <>
+                <Messages />
+                <AddMessagesForm />
+            </>
         </div>
     )
 }
 
-export default Dialogs
+export default Chat

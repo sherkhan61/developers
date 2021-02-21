@@ -1,6 +1,6 @@
 import {Redirect, Route, Switch} from "react-router";
 import React, {lazy, Suspense} from "react";
-import {DialogsPage, UsersPage, FriendsPage, SearchPage, LoginPage} from '@pages'
+import {ChatPage, UsersPage, FriendsPage, SearchPage, LoginPage} from '@pages'
 import {Preloader} from '@ui/atoms/preloader/Preloader'
 
 
@@ -29,8 +29,8 @@ export const Routes = () => {
       <Route path="/music">
         <MusicPage/>
       </Route>
-      <Route path="/dialogs">
-        <DialogsPage/>
+      <Route path="/chat">
+        <ChatPage/>
       </Route>
       <Route path="/users/">
         <UsersPage/>

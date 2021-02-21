@@ -1,6 +1,6 @@
 import dialogsPageReducer, {
   initialState, sendMessageActionCreator
-} from "../dialogs-reducer";
+} from "../chat-reducer";
 
 
 describe('Test for Dialogs_reducer', () => {

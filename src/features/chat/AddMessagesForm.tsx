@@ -1,38 +1,34 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {RootState} from '@store/root-reducer'
+import {sendMessage} from '@chat/modules/actions'
 
 
-const AddMessagesForm: React.FC<{wsChannel: WebSocket | null}> = ({wsChannel}) => {
+
+export const AddMessagesForm: React.FC<{}> = () => {
     const [message, setMessage] = useState('')
-    const [readyStatus, setReadyStatus] = useState<'pending' | 'ready'>('pending')
+    const dispatch = useDispatch()
 
-    useEffect(() => {
-        let openHandler = () => {
-            setReadyStatus('ready')
-        }
-        wsChannel?.addEventListener('open', openHandler)
+    const status = useSelector((state: RootState) => state.chat.status)
 
-        return () => {
-            wsChannel?.removeEventListener('open', openHandler)
-        }
-    }, [wsChannel])
 
-    const sendMessage = () => {
+    const sendMessageHandler = () => {
         if (!message) {
             return
         }
-        wsChannel?.send(message)
+        dispatch(sendMessage(message))
         setMessage('')
     }
+
     return (
-        <>
+        <div>
             <div>
                 <textarea onChange={(e) => setMessage(e.currentTarget.value)} value={message}></textarea>
             </div>
             <div>
-                <button disabled={wsChannel === null || readyStatus !== 'ready'} onClick={sendMessage}>Send</button>
+                <button disabled={status !== 'ready'} onClick={sendMessageHandler}>Send</button>
             </div>
-        </>
+        </div>
     )
 }
 
-export default AddMessagesForm
