@@ -2,7 +2,7 @@ import axios, {AxiosResponse} from "axios";
 
 
 const instance = axios.create({
-  baseURL: 'https://api.deezer.com/version/service/id/method/?parameters/'
+  baseURL: 'https://cors-anywhere.herokuapp.com/http://api.deezer.com/'
 });
 
 
