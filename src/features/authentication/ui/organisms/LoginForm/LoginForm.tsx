@@ -22,14 +22,16 @@ export const LoginForm: React.FC<ILoginFormProps> = ({captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <input name='email'
+                <input className={classes.common_input}
+                       name='email'
                         ref={register({
                             required: "Please  enter your email"
                         })}
                         placeholder='e-mail'/>
                         <span className={classes.span_error}>{errors.name}</span>
             </div>
-            <div><input name='password'
+            <div><input className={classes.common_input}
+                        name='password'
                         ref={register({
                             required: "Please enter your password"
                         })}
@@ -39,13 +41,15 @@ export const LoginForm: React.FC<ILoginFormProps> = ({captchaUrl}) => {
                 <span className={classes.span_error}>{errors.name}</span>
             </div>
             <div>
-                <input name='rememberMe'
+                <input className={classes.common_input}
+                       name='rememberMe'
                        type="checkbox"/>
                 <label htmlFor="rememberMe">Remember Me</label>
             </div>
             {captchaUrl ?
                 <><img alt="captcha" src={captchaUrl}/>
-                    <input name='captcha'
+                    <input className={classes.common_input}
+                           name='captcha'
                            placeholder='Enter symbols'
                            ref={register({
                                required: "Please enter symbols"
@@ -56,7 +60,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({captchaUrl}) => {
                 ""}
             <div>
                 <p className={classes.span_error}>{errors.name}</p>
-                <input
+                <input className={classes.send_btn}
                     value={"Login"} type="submit"/>
             </div>
         </form>
