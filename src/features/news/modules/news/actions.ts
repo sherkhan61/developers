@@ -1,5 +1,5 @@
-import {IArticle, INewsParams, newsApi} from '../../../../api/newsApi'
 import {DispatchType} from '../../../../lib/store/root-reducer'
+import {IArticle, INewsParams, mediaStackApi} from "@api/MediaStackApi";
 
 
 
@@ -11,7 +11,7 @@ export const newsActions = {
 // =====================Thunk Creators====================
 
 export const getNews = (params: INewsParams ) => (dispatch: DispatchType) => {
-  newsApi.getNews(params).then((articles) => {
+  mediaStackApi.getNews(params).then((articles) => {
     if (articles) dispatch(newsActions.setNews(articles))
   });
 };

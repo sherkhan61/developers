@@ -16,9 +16,8 @@ export const Search: FC<ISearchProps> = ({dispatch}) => {
         let query = event.target as HTMLFormElement
         query = query.search_query.value
         dispatch(getNews({
-            query: `q=${query}`,
+            keywords: `&keywords=${query}`,
             category: '',
-            country: ''
         }))
     }
 

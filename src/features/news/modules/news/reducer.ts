@@ -1,6 +1,6 @@
-import {IArticle} from '../../../../api/newsApi'
 import {InferActionsTypes} from '../../../../lib/store/root-reducer'
 import {newsActions} from './actions'
+import {IArticle} from "@api/MediaStackApi";
 
 
 export type ActionsTypes = InferActionsTypes<typeof newsActions>

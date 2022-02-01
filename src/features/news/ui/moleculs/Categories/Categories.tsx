@@ -14,7 +14,7 @@ export const Categories: FC<ICategoriesProps> = ({dispatch}) => {
     const onCategoryChoose = (event: React.MouseEvent<HTMLElement>) => {
         const target = event.target as HTMLDivElement
         if (target.classList.contains(styles.categories_category)) {
-            const category = `&category=${target.dataset.cat}`
+            const category = `&categories=${target.dataset.cat}`
             dispatch(getNews({
                 category
             }))

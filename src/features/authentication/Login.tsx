@@ -18,6 +18,8 @@ export const Login: React.FC = () => {
         (
             <div className={classes.login}>
                 <h1 className={classes.login_title}>Please, log in...</h1>
+                <p>Username: sherkhan-92@bk.ru</p>
+                <p>password: Expo2017!</p>
                 <LoginForm captchaUrl={captchaUrl}/>
             </div>
         )
